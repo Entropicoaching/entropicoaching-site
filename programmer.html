@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gratis programmer | Entropi Coaching</title>
+<meta name="description" content="Gratis styrkeløft-programmer til begyndere. 12 ugers 3-kamp programmer i Google Sheets, designet af Marc Schlichting.">
+<meta property="og:title" content="Gratis programmer | Entropi Coaching">
+<meta property="og:description" content="Gratis styrkeløft-programmer til begyndere. 12 ugers 3-kamp programmer designet af Marc Schlichting.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=IBM+Plex+Sans:wght@300;400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+  /* ---- PROGRAMMER-SPECIFIC ---- */
+  .programs { background: var(--bg2); border-bottom: 1px solid var(--border); }
+  .programs-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; background: var(--border); }
+  .program-card { background: var(--bg2); padding: 2.5rem 2rem; border-top: 2px solid transparent; transition: border-color 0.2s, background 0.2s; display: flex; flex-direction: column; }
+  .program-card:hover { border-top-color: var(--amber); background: var(--bg3); }
+  .program-tag { font-family: var(--mono); font-size: 0.58rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--amber); margin-bottom: 1.25rem; }
+  .program-title { font-family: var(--serif); font-size: 1.6rem; font-weight: 400; color: var(--ink); margin-bottom: 0.5rem; line-height: 1.2; }
+  .program-meta { font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink4); margin-bottom: 1.25rem; }
+  .program-body { font-size: 0.88rem; color: var(--ink2); line-height: 1.8; margin-bottom: 1.5rem; }
+  .program-details { display: flex; flex-direction: column; gap: 0.5rem; padding-top: 1.25rem; border-top: 1px solid var(--border); margin-bottom: 1.5rem; }
+  .program-detail { display: flex; align-items: flex-start; gap: 0.6rem; font-size: 0.82rem; color: var(--ink3); line-height: 1.5; }
+  .program-detail::before { content: '-'; color: var(--amber-dim); flex-shrink: 0; font-family: var(--mono); font-size: 0.75rem; margin-top: 0.05rem; }
+  .program-link { display: inline-flex; align-items: center; gap: 0.5rem; font-family: var(--mono); font-size: 0.65rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--amber); text-decoration: none; border: 1px solid var(--amber-dim); padding: 0.6rem 1.2rem; transition: background 0.15s, color 0.15s; margin-top: auto; align-self: flex-start; }
+  .program-link:hover { background: var(--amber); color: var(--bg); }
+
+  .how-to { background: var(--bg); border-bottom: 1px solid var(--border); }
+  .how-to-heading { font-family: var(--serif); font-size: clamp(1.8rem, 2.8vw, 2.5rem); font-weight: 400; line-height: 1.1; color: var(--ink); margin-bottom: 2.5rem; }
+  .how-to-heading em { font-style: italic; color: var(--ink3); }
+  .how-to-steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--border); }
+  .how-to-step { background: var(--bg); padding: 2rem 1.75rem; }
+  .how-to-num { font-family: var(--mono); font-size: 0.6rem; font-weight: 500; color: var(--amber); letter-spacing: 0.1em; margin-bottom: 1rem; }
+  .how-to-title { font-size: 0.9rem; font-weight: 500; color: var(--ink); margin-bottom: 0.5rem; }
+  .how-to-body { font-size: 0.82rem; color: var(--ink3); line-height: 1.7; }
+
+  .note { background: var(--bg2); border-bottom: 1px solid var(--border); padding: 5rem 2.5rem; }
+  .note-inner { max-width: 680px; }
+  .note-heading { font-family: var(--serif); font-size: clamp(1.8rem, 2.5vw, 2.2rem); font-weight: 400; line-height: 1.15; color: var(--ink); margin-bottom: 1.25rem; }
+  .note-heading em { font-style: italic; color: var(--ink3); }
+  .note-body { font-size: 0.95rem; color: var(--ink2); line-height: 1.9; margin-bottom: 1rem; }
+
+  @media (max-width: 900px) {
+    .programs-grid { grid-template-columns: 1fr; }
+    .how-to-steps { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body style="background:#141410;color:#edeae2;">
+
+<nav>
+  <a href="index.html" class="nav-logo">Entropi<span>.</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html#filosofi">Filosofi</a></li>
+    <li><a href="resultater.html">Resultater</a></li>
+    <li><a href="coaching.html">Coaching</a></li>
+    <li><a href="programmer.html" class="active">Programmer</a></li>
+    <li><a href="om.html">Om Entropi</a></li>
+  </ul>
+  <button class="nav-hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+  <a href="coaching.html#ansoeg" class="nav-cta">Ansøg om coaching</a>
+</nav>
+<div class="mobile-menu">
+  <a href="index.html#filosofi">Filosofi</a>
+  <a href="resultater.html">Resultater</a>
+  <a href="coaching.html">Coaching</a>
+  <a href="programmer.html">Programmer</a>
+  <a href="om.html">Om Entropi</a>
+  <a href="coaching.html#ansoeg" class="nav-cta">Ansøg om coaching</a>
+</div>
+
+<div class="page-header">
+  <div>
+    <p class="page-eyebrow">Programmer</p>
+    <h1 class="page-h1">Gratis<br><em>programmer.</em></h1>
+  </div>
+  <p class="page-intro">12 ugers styrkeløft-programmer til begyndere og nysgerrige. Designet med samme omhu som individuel coaching. Helt gratis, ingen signup.</p>
+</div>
+
+<!-- PROGRAMS -->
+<section class="programs">
+  <p class="section-eyebrow reveal">Vælg program</p>
+  <div class="programs-grid reveal">
+    <div class="program-card">
+      <div class="program-tag">Begynder · 2-3x/uge</div>
+      <div class="program-title">3-kamp introduktion</div>
+      <div class="program-meta">12 uger · 2x/uge + valgfri 3. dag</div>
+      <p class="program-body">Til dig der er ny i styrkeløft eller træner 2-3 gange om ugen. Programmet bygger et solidt fundament i squat, bænkpres og dødløft med fokus på teknik og gradvis progression.</p>
+      <div class="program-details">
+        <div class="program-detail">Squat, bænk og dødløft som hovedløft</div>
+        <div class="program-detail">Teknikfokuseret med gradvis intensitetsstigning</div>
+        <div class="program-detail">Valgfri 3. dag for ekstra volumen</div>
+        <div class="program-detail">RPE-baseret autoregulering</div>
+      </div>
+      <a href="LINK_TIL_GOOGLE_SHEET_2X" target="_blank" rel="noopener" class="program-link">Åbn i Google Sheets</a>
+    </div>
+    <div class="program-card">
+      <div class="program-tag">Begynder/let øvet · 4x/uge</div>
+      <div class="program-title">3-kamp opbygning</div>
+      <div class="program-meta">12 uger · 4x/uge</div>
+      <p class="program-body">Til dig der allerede træner regelmæssigt og vil strukturere din træning mod styrkeløft. Mere volumen, mere variation i øvelsesvalg, og en tydeligere periodisering.</p>
+      <div class="program-details">
+        <div class="program-detail">4 ugentlige sessioner med SBD-fokus</div>
+        <div class="program-detail">Periodiseret opbygning over 12 uger</div>
+        <div class="program-detail">Accessories tilpasset 3-kamp</div>
+        <div class="program-detail">RPE-baseret autoregulering</div>
+      </div>
+      <a href="LINK_TIL_GOOGLE_SHEET_4X" target="_blank" rel="noopener" class="program-link">Åbn i Google Sheets</a>
+    </div>
+  </div>
+</section>
+
+<!-- HOW TO USE -->
+<section class="how-to">
+  <p class="section-eyebrow reveal">Sådan bruger du dem</p>
+  <h2 class="how-to-heading reveal">Tre trin,<br><em>du er i gang.</em></h2>
+  <div class="how-to-steps reveal">
+    <div class="how-to-step">
+      <div class="how-to-num">01</div>
+      <div class="how-to-title">Åbn linket</div>
+      <div class="how-to-body">Klik på programmet. Det åbner et read-only Google Sheet.</div>
+    </div>
+    <div class="how-to-step">
+      <div class="how-to-num">02</div>
+      <div class="how-to-title">Lav en kopi</div>
+      <div class="how-to-body">Klik "Filer" > "Opret en kopi" i Google Sheets. Nu har du din egen version du kan redigere.</div>
+    </div>
+    <div class="how-to-step">
+      <div class="how-to-num">03</div>
+      <div class="how-to-title">Kør programmet</div>
+      <div class="how-to-body">Følg programmet, log dine løft, og juster efter RPE-anvisningerne i sheetet.</div>
+    </div>
+  </div>
+</section>
+
+<!-- NOTE -->
+<div class="note">
+  <div class="note-inner reveal">
+    <h2 class="note-heading">Programmer er<br><em>et udgangspunkt.</em></h2>
+    <p class="note-body">Disse programmer er designet til at give dig et solidt fundament. Men et program kan ikke se dig løfte, korrigere din teknik eller tilpasse sig din hverdag. Det kan coaching.</p>
+    <p class="note-body">Hvis du vil have individuel programmering, videoanalyse og en coach der kender din træning, kan du <a href="coaching.html#ansoeg" style="color:var(--amber);text-decoration:none;">ansøge om coaching her</a>.</p>
+  </div>
+</div>
+
+<footer>
+  <div>
+    <div class="footer-logo">Entropi<span>.</span></div>
+    <div class="footer-tagline">Systematisk styrke · data, disciplin & dybde</div>
+  </div>
+  <ul class="footer-links">
+    <li><a href="index.html#filosofi">Filosofi</a></li>
+    <li><a href="resultater.html">Resultater</a></li>
+    <li><a href="coaching.html">Coaching</a></li>
+    <li><a href="programmer.html">Programmer</a></li>
+    <li><a href="https://instagram.com/entropicoaching" target="_blank" rel="noopener">Instagram</a></li>
+  </ul>
+  <div class="footer-contact">
+    <div>Marc Schlichting</div>
+    <a href="mailto:coach@entropicoaching.dk">coach@entropicoaching.dk</a>
+    <div style="margin-top:0.4rem;font-size:0.62rem;color:var(--ink4);">© 2025 Entropi Coaching</div>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>
