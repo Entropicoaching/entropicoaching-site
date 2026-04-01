@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Resultater | Entropi Coaching</title>
+<meta name="description" content="Resultater fra atleter coached under Entropi Coaching: Europamester i dødløft 2025, nationale titler og dokumenterede præstationsfremgange.">
+<meta property="og:title" content="Resultater | Entropi Coaching">
+<meta property="og:description" content="Resultater fra atleter coached under Entropi Coaching: Europamester i dødløft 2025, nationale titler og dokumenterede præstationsfremgange.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=IBM+Plex+Sans:wght@300;400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+  /* ---- RESULTATER-SPECIFIC ---- */
+  .featured { background: var(--bg2); border-bottom: 1px solid var(--border); }
+  .featured-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border: 1px solid var(--border2); }
+  .featured-img-wrap { position: relative; overflow: hidden; }
+  .featured-img { width: 100%; height: 100%; object-fit: cover; object-position: center 20%; display: block; filter: brightness(0.82); }
+  .featured-img-overlay { position: absolute; inset: 0; background: linear-gradient(to right, transparent 60%, var(--bg2) 100%); }
+  .featured-content { padding: 3rem; }
+  .featured-tag { font-family: var(--mono); font-size: 0.6rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--amber); margin-bottom: 1.5rem; }
+  .featured-result { font-family: var(--serif); font-size: clamp(2.2rem, 4vw, 3.5rem); font-weight: 400; line-height: 1.05; color: var(--ink); margin-bottom: 0.5rem; }
+  .featured-result em { font-style: italic; color: var(--ink3); }
+  .featured-class { font-family: var(--mono); font-size: 0.65rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink3); margin-bottom: 1.75rem; }
+  .featured-body { font-size: 0.92rem; color: var(--ink2); line-height: 1.85; margin-bottom: 2rem; }
+  .featured-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--border); margin-top: 1.5rem; }
+  .f-stat { background: var(--bg3); padding: 1rem; }
+  .f-stat-num { font-family: var(--serif); font-size: 1.5rem; color: var(--ink); line-height: 1; margin-bottom: 0.25rem; }
+  .f-stat-label { font-family: var(--mono); font-size: 0.58rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink4); }
+
+  .press-ref { display: inline-block; margin-top: 1.5rem; font-family: var(--mono); font-size: 0.55rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink4); text-decoration: none; border-bottom: 1px solid var(--border); padding-bottom: 0.15rem; transition: color 0.15s; }
+  .press-ref:hover { color: var(--ink3); }
+
+  .all-results { background: var(--bg); border-bottom: 1px solid var(--border); }
+  .results-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--border); }
+  .result-card { background: var(--bg); padding: 2rem 1.75rem; border-top: 2px solid transparent; transition: border-color 0.2s, background 0.2s; }
+  .result-card:hover { border-top-color: var(--amber); background: var(--bg2); }
+  .result-tag { font-family: var(--mono); font-size: 0.58rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--amber); margin-bottom: 1rem; }
+  .result-title { font-family: var(--serif); font-size: 1.5rem; font-weight: 400; color: var(--ink); line-height: 1.2; margin-bottom: 0.4rem; }
+  .result-class { font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink4); margin-bottom: 1rem; }
+  .result-body { font-size: 0.84rem; color: var(--ink3); line-height: 1.75; }
+
+  .marc-results { background: var(--bg2); border-bottom: 1px solid var(--border); }
+  .marc-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
+  .marc-heading { font-family: var(--serif); font-size: clamp(1.9rem, 2.8vw, 2.6rem); font-weight: 400; line-height: 1.1; color: var(--ink); margin-bottom: 1.25rem; }
+  .marc-heading em { font-style: italic; color: var(--ink3); }
+  .marc-body { font-size: 0.93rem; color: var(--ink2); line-height: 1.9; margin-bottom: 1rem; }
+  .marc-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--border); margin-top: 1.5rem; }
+  .m-stat { background: var(--bg2); padding: 1.5rem; }
+  .m-stat-num { font-family: var(--serif); font-size: 2rem; color: var(--ink); line-height: 1; margin-bottom: 0.3rem; }
+  .m-stat-num sup { font-size: 0.85rem; color: var(--amber); vertical-align: super; }
+  .m-stat-label { font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink3); }
+  .marc-img { width: 100%; max-height: 380px; object-fit: cover; object-position: center 20%; display: block; filter: brightness(0.85); border: 1px solid var(--border2); }
+  .marc-caption { padding: 0.6rem 1rem; background: var(--bg3); border: 1px solid var(--border); border-top: none; font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink3); }
+
+  @media (max-width: 900px) {
+    .featured-inner { grid-template-columns: 1fr; }
+    .featured-img-wrap { height: 50vw; }
+    .results-grid { grid-template-columns: 1fr; }
+    .marc-inner { grid-template-columns: 1fr; gap: 3rem; }
+  }
+</style>
+</head>
+<body style="background:#141410;color:#edeae2;">
+
+<nav>
+  <a href="index.html" class="nav-logo">Entropi<span>.</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html#filosofi">Filosofi</a></li>
+    <li><a href="resultater.html" class="active">Resultater</a></li>
+    <li><a href="coaching.html">Coaching</a></li>
+    <li><a href="programmer.html">Programmer</a></li>
+    <li><a href="om.html">Om Entropi</a></li>
+  </ul>
+  <button class="nav-hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+  <a href="coaching.html#ansoeg" class="nav-cta">Ansøg om coaching</a>
+</nav>
+<div class="mobile-menu">
+  <a href="index.html#filosofi">Filosofi</a>
+  <a href="resultater.html">Resultater</a>
+  <a href="coaching.html">Coaching</a>
+  <a href="programmer.html">Programmer</a>
+  <a href="om.html">Om Entropi</a>
+  <a href="coaching.html#ansoeg" class="nav-cta">Ansøg om coaching</a>
+</div>
+
+<div class="page-header">
+  <div>
+    <p class="page-eyebrow">Resultater</p>
+    <h1 class="page-h1">Præstationer<br><em>på platformen.</em></h1>
+  </div>
+  <p class="page-intro">Resultater fra atleter coached under Entropi og fra Marc selv som konkurrenceløfter. Navne holdes private med respekt for atleternes privatliv.</p>
+</div>
+
+<!-- FEATURED -->
+<section class="featured">
+  <p class="section-eyebrow reveal">Seneste resultat</p>
+  <div class="featured-inner reveal">
+    <div class="featured-img-wrap">
+      <img src="IMG_9932.PNG" alt="EPF Europamesterskab 2025" class="featured-img" loading="lazy">
+      <div class="featured-img-overlay"></div>
+    </div>
+    <div class="featured-content">
+      <div class="featured-tag">🇩🇰 EPF Europamesterskab · 2025</div>
+      <div class="featured-result">Europamester<br><em>i dødløft.</em></div>
+      <div class="featured-class">Kvinder · -84 kg · Åben klasse</div>
+      <p class="featured-body">Guldmedalje ved EPF Europamesterskabet i dødløft. Atletens præstation placerede hende som historisk stærkeste i sin vægtklasse i Danmark målt på kvinders IPF point, og stærkeste overall på tværs af alle klasser. Bygget på systematisk teknisk arbejde, datadrevet programmering og en konkurrencestrategi uden gætteri.</p>
+      <div class="featured-stats">
+        <div class="f-stat"><div class="f-stat-num">🥇</div><div class="f-stat-label">Europamester</div></div>
+        <div class="f-stat"><div class="f-stat-num">DK #1</div><div class="f-stat-label">IPF point kvinder</div></div>
+        <div class="f-stat"><div class="f-stat-num">2025</div><div class="f-stat-label">Sæson</div></div>
+      </div>
+      <a href="https://www.sn.dk/art6540043/roskilde-kommune/lokal-sport/em-medaljer-til-unge-styrkeloeftere/" target="_blank" rel="noopener" class="press-ref">Sjællandske Nyheder</a>
+    </div>
+  </div>
+</section>
+<section class="all-results">
+  <p class="section-eyebrow reveal">Alle resultater</p>
+  <div class="results-grid reveal">
+    <div class="result-card">
+      <div class="result-tag">EPF · Europamesterskab 2025</div>
+      <div class="result-title">Europamester</div>
+      <div class="result-class">Kvinder · -84 kg · Åben</div>
+      <p class="result-body">Guldmedalje i dødløft. Historisk stærkeste i klassen i Danmark på kvinders IPF point.</p>
+    </div>
+    <div class="result-card">
+      <div class="result-tag">DSF Nationale · 2021–2023</div>
+      <div class="result-title">Sub-junior #1</div>
+      <div class="result-class">Nationalt · Sub-junior</div>
+      <p class="result-body">Top-1 placering nationalt med flere nationale rekorder sat under samarbejdet. Fortsat stærk udvikling på junior-niveau.</p>
+    </div>
+    <div class="result-card">
+      <div class="result-tag">Løbende · 2019–nu</div>
+      <div class="result-title">Nationale topatleter</div>
+      <div class="result-class">Diverse klasser</div>
+      <p class="result-body">Coaching af atleter på tværs af klasser og niveauer med dokumenterede præstationsfremgange ved nationale stævner.</p>
+    </div>
+  </div>
+</section>
+
+<!-- MARC'S OWN RESULTS -->
+<section class="marc-results">
+  <div class="marc-inner">
+    <div>
+      <p class="section-eyebrow reveal">Som løfter</p>
+      <h2 class="marc-heading reveal">12 år på<br><em>platformen.</em></h2>
+      <p class="marc-body reveal">Foruden coaching har Marc konkurreret aktivt i styrkeløft siden han var 16. Den personlige erfaring fra platformen er integreret i coaching-tilgangen. Det er svært at forstå hvad en atlet gennemgår uden selv at have stået der.</p>
+      <p class="marc-body reveal">Højdepunktet kom i 2021 med guld i bænkpres ved junior-DM som 22-årig, efter seks år med systematisk teknik- og programmeringsarbejde.</p>
+      <div class="marc-stats">
+        <div class="m-stat"><div class="m-stat-num">1<sup>st</sup></div><div class="m-stat-label">DM-guld bænkpres, junior</div></div>
+        <div class="m-stat"><div class="m-stat-num">12<sup>+</sup></div><div class="m-stat-label">Års konkurrenceerfaring</div></div>
+        <div class="m-stat"><div class="m-stat-num">2021</div><div class="m-stat-label">Nationale mesterskaber</div></div>
+        <div class="m-stat"><div class="m-stat-num">22</div><div class="m-stat-label">Alder ved titlen</div></div>
+      </div>
+    </div>
+    <div class="reveal">
+      <img src="IMG_0060.jpg" alt="Marc Schlichting" class="marc-img" loading="lazy">
+      <div class="marc-caption">Marc Schlichting · Entropi Coaching</div>
+    </div>
+  </div>
+</section>
+
+<div class="cta-section">
+  <h2 class="cta-heading reveal">Vil du arbejde<br><em>mod dit næste mål?</em></h2>
+  <a href="coaching.html#ansoeg" class="btn-primary reveal">Ansøg om coaching</a>
+</div>
+
+<footer>
+  <div>
+    <div class="footer-logo">Entropi<span>.</span></div>
+    <div class="footer-tagline">Systematisk styrke · data, disciplin & dybde</div>
+  </div>
+  <ul class="footer-links">
+    <li><a href="index.html#filosofi">Filosofi</a></li>
+    <li><a href="resultater.html">Resultater</a></li>
+    <li><a href="coaching.html">Coaching</a></li>
+    <li><a href="programmer.html">Programmer</a></li>
+    <li><a href="https://instagram.com/entropicoaching" target="_blank" rel="noopener">Instagram</a></li>
+  </ul>
+  <div class="footer-contact">
+    <div>Marc Schlichting</div>
+    <a href="mailto:coach@entropicoaching.dk">coach@entropicoaching.dk</a>
+    <div style="margin-top:0.4rem;font-size:0.62rem;color:var(--ink4);">© 2025 Entropi Coaching</div>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>
