@@ -38,11 +38,12 @@ nav {
 }
 .nav-logo { font-family: var(--serif); font-size: 1.2rem; color: var(--ink); text-decoration: none; }
 .nav-logo span { color: var(--amber); }
-.nav-links { display: flex; gap: 2rem; list-style: none; }
+.nav-links { display: flex; gap: 2rem; list-style: none; position: relative; z-index: 201; }
 .nav-links a {
   font-family: var(--mono); font-size: 0.7rem; font-weight: 500;
   letter-spacing: 0.12em; text-transform: uppercase;
   color: var(--ink3); text-decoration: none; transition: color 0.15s;
+  padding: 0.5rem 0; display: inline-block;
 }
 .nav-links a:hover, .nav-links a.active { color: var(--ink); }
 .nav-cta {
@@ -73,8 +74,9 @@ nav {
   background: rgba(20,20,16,0.98); backdrop-filter: blur(24px);
   flex-direction: column; align-items: center; justify-content: center; gap: 2rem;
   opacity: 0; pointer-events: none; transition: opacity 0.3s ease;
+  visibility: hidden;
 }
-.mobile-menu.open { opacity: 1; pointer-events: auto; }
+.mobile-menu.open { opacity: 1; pointer-events: auto; visibility: visible; }
 .mobile-menu a {
   font-family: var(--mono); font-size: 0.75rem; font-weight: 500;
   letter-spacing: 0.14em; text-transform: uppercase;
