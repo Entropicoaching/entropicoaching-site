@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Volumen: hvad det er, hvad det gør, og hvornår mere ikke er bedre | Entropi Coaching</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=IBM+Plex+Sans:wght@300;400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#141410;--bg2:#1c1c18;--bg3:#242420;--ink:#edeae2;--ink2:#ccc8bc;--ink3:#908d84;--ink4:#4a4844;--amber:#c8923a;--amber-dim:#7a5520;--border:rgba(237,234,226,0.08);--border2:rgba(237,234,226,0.14);--serif:'Playfair Display',Georgia,serif;--sans:'IBM Plex Sans',sans-serif;--mono:'IBM Plex Mono',monospace;}
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-weight:400;line-height:1.6;overflow-x:hidden;}
+  nav{position:fixed;top:0;left:0;right:0;z-index:200;height:56px;display:flex;align-items:center;justify-content:space-between;padding:0 2.5rem;background:rgba(20,20,16,0.94);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);}
+  .nav-logo{font-family:var(--serif);font-size:1.2rem;color:var(--ink);text-decoration:none;}
+  .nav-logo span{color:var(--amber);}
+  .nav-back{font-family:var(--mono);font-size:0.63rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink3);text-decoration:none;transition:color 0.15s;}
+  .nav-back:hover{color:var(--ink);}
+  .article-wrap{max-width:720px;margin:0 auto;padding:9rem 2rem 6rem;}
+  .article-meta{display:flex;align-items:center;gap:1.5rem;margin-bottom:2.5rem;}
+  .meta-tag{font-family:var(--mono);font-size:0.6rem;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:var(--amber);}
+  .meta-divider{width:1px;height:12px;background:var(--border2);}
+  .meta-date,.meta-read{font-family:var(--mono);font-size:0.6rem;letter-spacing:0.08em;color:var(--ink4);}
+  .article-title{font-family:var(--serif);font-size:clamp(2.2rem,4vw,3.2rem);font-weight:400;line-height:1.1;color:var(--ink);margin-bottom:1rem;}
+  .article-title em{font-style:italic;color:var(--ink3);}
+  .article-intro{font-size:1.05rem;color:var(--ink2);line-height:1.85;margin-bottom:3rem;padding-bottom:2rem;border-bottom:1px solid var(--border);}
+  .article-body p{font-size:0.97rem;color:var(--ink2);line-height:1.95;margin-bottom:1.5rem;}
+  .article-body p strong{color:var(--ink);font-weight:500;}
+  .article-body h2{font-family:var(--serif);font-size:1.5rem;font-weight:400;color:var(--ink);margin:2.5rem 0 1rem;line-height:1.2;}
+  .article-body h2 em{font-style:italic;color:var(--ink3);}
+  .note{margin:2rem 0;padding:1.25rem 1.5rem;background:var(--bg2);border-left:2px solid var(--amber-dim);}
+  .note-label{font-family:var(--mono);font-size:0.58rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--amber);margin-bottom:0.5rem;}
+  .note p{font-size:0.88rem;color:var(--ink3);line-height:1.75;margin:0;font-style:italic;}
+  .reflection{margin:2.5rem 0;padding:1.5rem;background:var(--bg3);border:1px solid var(--border2);}
+  .reflection-label{font-family:var(--mono);font-size:0.58rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--amber);margin-bottom:0.75rem;}
+  .reflection ul{list-style:none;display:flex;flex-direction:column;gap:0.6rem;}
+  .reflection ul li{font-size:0.9rem;color:var(--ink2);line-height:1.65;padding-left:1.25rem;position:relative;}
+  .reflection ul li::before{content:'-';position:absolute;left:0;color:var(--amber-dim);font-family:var(--mono);}
+  .references{margin-top:4rem;padding-top:2rem;border-top:1px solid var(--border);}
+  .references-label{font-family:var(--mono);font-size:0.6rem;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink4);margin-bottom:1rem;}
+  .references p{font-size:0.8rem;color:var(--ink4);line-height:1.7;margin-bottom:0.5rem;}
+  .author-strip{margin-top:3rem;padding:1.5rem;background:var(--bg2);border:1px solid var(--border);display:flex;align-items:center;gap:1.25rem;}
+  .author-label{font-family:var(--mono);font-size:0.58rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink4);margin-bottom:0.3rem;}
+  .author-name{font-size:0.92rem;font-weight:500;color:var(--ink);margin-bottom:0.2rem;}
+  .author-bio{font-size:0.82rem;color:var(--ink3);line-height:1.5;}
+  .author-dot{width:40px;height:40px;border-radius:50%;background:var(--amber-dim);border:1px solid var(--amber);display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:1rem;color:var(--amber);flex-shrink:0;}
+  .back-link{display:inline-flex;align-items:center;gap:0.5rem;font-family:var(--mono);font-size:0.65rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink3);text-decoration:none;margin-top:3rem;transition:color 0.15s;}
+  .back-link:hover{color:var(--ink);}
+  .back-link::before{content:'←';color:var(--amber);}
+  footer{background:var(--bg2);border-top:1px solid var(--border);padding:2.5rem;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:2rem;margin-top:4rem;}
+  .footer-logo{font-family:var(--serif);font-size:1.1rem;color:var(--ink);}
+  .footer-logo span{color:var(--amber);}
+  .footer-tagline{font-family:var(--mono);font-size:0.58rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink4);margin-top:0.3rem;}
+  .footer-links{display:flex;gap:1.75rem;list-style:none;justify-content:center;}
+  .footer-links a{font-family:var(--mono);font-size:0.6rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink3);text-decoration:none;transition:color 0.15s;}
+  .footer-links a:hover{color:var(--ink);}
+  .footer-contact{text-align:right;font-size:0.82rem;color:var(--ink3);line-height:1.8;}
+  .footer-contact a{color:var(--ink2);text-decoration:none;}
+  @media(max-width:700px){nav{padding:0 1.25rem;}.article-wrap{padding:7rem 1.25rem 4rem;}footer{grid-template-columns:1fr;text-align:center;}.footer-contact{text-align:center;}.footer-links{justify-content:center;}}
+</style>
+</head>
+<body style="background:#141410;color:#edeae2;">
+<nav>
+  <a href="index.html" class="nav-logo">Entropi<span>.</span></a>
+  <a href="artikler.html" class="nav-back">< Artikler</a>
+</nav>
+<div class="article-wrap">
+  <div class="article-meta">
+    <span class="meta-tag">Programmering</span>
+    <div class="meta-divider"></div>
+    <span class="meta-date">2025</span>
+    <div class="meta-divider"></div>
+    <span class="meta-read">9 min. læsning</span>
+  </div>
+  <h1 class="article-title">Volumen: hvad det er,<br><em>hvad det gør.</em></h1>
+  <p class="article-intro">Volumen er sandsynligvis den variabel der diskuteres mest i styrketræning. Alligevel behandles den ofte som en simpel ligning: mere sæt, mere fremgang. Billedet er mere nuanceret, og forståelsen af det kan ændre den måde du tænker om din træning på.</p>
+  <div class="article-body">
+
+    <h2>Hvad er volumen<br><em>egentlig?</em></h2>
+    <p>I sin mest basale form er volumen et udtryk for den samlede mængde arbejde kroppen udsættes for over en given periode. Det kan kvantificeres på mange måder: antal sæt, antal gentagelser, total vægtstang-volumen (sæt × gentagelser × vægt), eller antal sæt pr. muskelgruppe pr. uge.</p>
+    <p>I styrkeløft er ugentlige sæt pr. muskelgruppe det mest praktiske mål. Det er nemt at manipulere, nemt at registrere og nemt at sammenligne over tid. Det er dog vigtigt at huske at dette mål ikke er perfekt, ikke alle sæt er ens. Et sæt med 3 gentagelser på 90% af 1RM og et sæt med 12 gentagelser på 70% tæller begge som ét sæt, men de er ikke det samme stimulus.</p>
+    <p>Det er det første forbehold du skal bære med dig igennem resten af denne artikel: volumen er en forenkling af virkeligheden. En nyttig forenkling, men en forenkling.</p>
+
+    <h2>Dose-respons:<br><em>hvad forskningen faktisk viser.</em></h2>
+    <p>Der er bred forskningsmæssig konsensus om at der eksisterer en positiv sammenhæng mellem træningsvolumen og adaptation, op til et vist punkt. En af de mest omfattende meta-analyser til dato, Pelland et al. (2024), analyserede 67 studier med over 2.000 deltagere og konkluderede at effekten af øget volumen på både hypertrofi og styrkefremgang var til stede gennem hele det undersøgte spektrum. Begge viser dog tydelige tegn på aftagende udbytte, og denne effekt er markant hurtigere for styrke end for hypertrofi.</p>
+    <p>Det vil sige: hvis målet er muskelvækst, ser høj volumen ud til at betale sig langt op ad skalaen. Hvis målet er styrkefremgang specifikt, ser billedet anderledes ud. Styrke reagerer hurtigere på aftagende udbytte ved øget volumen, og det har direkte konsekvenser for programdesign i styrkeløft.</p>
+    <p>Schoenfeld et al. (2019) viste at høj volumen gav statistisk signifikant mere hypertrofi end lav volumen, men ingen signifikant forskel i styrkefremgang målt på 1RM. Alle grupper, fra ét sæt til fem sæt pr. øvelse, blev stærkere i nogenlunde samme omfang over otte uger. Det er et vigtigt fund: du kan blive stærkere på relativt lidt arbejde, særligt på kortere sigt.</p>
+
+    <div class="note">
+      <div class="note-label">Kildekritik</div>
+      <p>Størstedelen af volumenforskning er udført på moderat trænede deltagere og anvender typisk rep-ranges på 6-15 gentagelser pr. sæt. Det er ikke det samme som den specifikke belastning en konkurrenceløfter møder med 1-5 gentagelser i de primære løft. Schoenfeld et al. bemærker selv at "research in highly trained individuals is lacking" og at specificiteten i adaptation sandsynligvis øges med træningserfaring. Studierne giver et solidt fundament for principper, men de kan ikke oversættes direkte til eliteløftere uden forbehold.</p>
+    </div>
+
+    <h2>Hvorfor styrke og hypertrofi<br><em>reagerer forskelligt.</em></h2>
+    <p>Forklaringen på forskellen ligger i hvad der driver henholdsvis muskelvækst og styrkefremgang. Hypertrofi er i høj grad et volumenafhængigt fænomen: mekanisk tension og metabolisk stress over et tilstrækkeligt antal sæt og gentagelser er den primære driver. Styrke er i højere grad afhængig af neuromuskular adaptation, nervesystemets evne til at rekruttere og koordinere muskelfibre under maksimalt arbejde.</p>
+    <p>Neuromuskular adaptation kræver ikke nødvendigvis massivt volumen. Den kræver specifik og tilstrækkelig eksponering for tung belastning. Det er grunden til at professionelle styrkeløftere ikke træner som kropsbygningssportsudøvere: de behøver ikke de samme mængder arbejde for at blive stærkere, men de behøver det specifikke stimulus fra tung belastning.</p>
+    <p>Androulakis-Korakakis et al. (2021) undersøgte minimum effective training dose for styrkeløftere specifikt og fandt at ganske beskedne mængder arbejde, op mod én til tre sæt med høj intensitet, to til tre gange om ugen, kan producere statistisk signifikante styrkefremgange. Det er ikke en anbefaling om at træne lidt. Det er en påmindelse om at mere ikke automatisk er bedre, og at svaret på stagnation ikke nødvendigvis er øget volumen.</p>
+
+    <h2>Det individuelle respons:<br><em>volumenet der passer til dig.</em></h2>
+    <p>En central udfordring i volumenforskning er at individuel variation i respons er stor. To løftere kan følge det samme program og opleve markant forskellig adaptation, ikke fordi det ene program er rigtigt og det andet forkert, men fordi individuel tolerance for volumen varierer som funktion af træningshistorik, recovery-kapacitet og kontekst.</p>
+    <p>Et studie fra 2024 (Lixandrão et al.) fandt at løftere der ikke responderede på lavt volumen viste signifikant hypertrofi ved øget volumen, mens responderne allerede var sat i gang. Det peger på at volumenrespons er individuelt, og at hvad der er tilstrækkeligt for én løfter kan være for lidt for en anden.</p>
+    <p>Det praktiske spørgsmål er ikke "hvad er den optimale volumen?" men "hvad er den rette mængde arbejde for denne løfter på dette tidspunkt?" Det er to meget forskellige spørgsmål, og kun det andet er relevant i praksis.</p>
+
+    <h2>Volumen over tid:<br><em>progression er ikke lineær.</em></h2>
+    <p>En fejl mange begår er at forsøge at øge volumen kontinuerligt over tid, som om mere sæt altid er bedre end færre sæt. Men volumenprogression fungerer som al anden progression: der er grænser for hvad kroppen kan absorbere i en given periode, og over disse grænser skabes mere fatigue end adaptation.</p>
+    <p>Velfungerende programdesign bruger volumen strategisk. Perioder med højere volumen og lavere intensitet alternerer med perioder med lavere volumen og højere intensitet. Volumen er et redskab til at skabe stimulus, ikke et mål i sig selv. Spørgsmålet er ikke om du laver nok sæt. Det er om du laver de rigtige sæt på det rigtige tidspunkt i dit program.</p>
+
+    <div class="reflection">
+      <div class="reflection-label">Refleksioner til din træning</div>
+      <ul>
+        <li>Registrer dit ugentlige sæt-antal pr. løft i en periode. Ikke for at optimere det, men for at have et udgangspunkt at vurdere fremtidige ændringer fra.</li>
+        <li>Næste gang du overvejer at tilføje mere volumen fordi fremgangen er stagneret: overvej om problemet er for lidt stimulus, eller om kroppen simpelthen er optaget med at absorbere det den allerede har.</li>
+        <li>Skeln mellem volumen som hypertrofi-redskab og volumen som styrkeudviklingsredskab. De to behøver ikke det samme antal sæt for at fungere.</li>
+        <li>Brug fatigue som signal. Hvis præstationen konstant falder ved et givent volumen, er det en information, ikke om at du er svag, men om at balancen er forskudt.</li>
+      </ul>
+    </div>
+
+  </div>
+  <div class="references">
+    <div class="references-label">Referencer</div>
+    <p>Androulakis-Korakakis, P., Michalopoulos, N., Fisher, J. P., Keogh, J., Loenneke, J. P., Helms, E., et al. (2021). The minimum effective training dose required for 1RM strength in powerlifters. <em>Frontiers in Sports and Active Living, 3</em>, 713655.</p>
+    <p>Lixandrão, M. E., Bamman, M., Vechin, F. C., Conceicao, M. S., Telles, G., Longobardi, I., et al. (2024). Higher resistance training volume offsets muscle hypertrophy nonresponsiveness in older individuals. <em>Journal of Applied Physiology, 136</em>(2), 421–429.</p>
+    <p>Pelland, J. C., Remmert, J., Robinson, Z. P., Hinson, S., & Zourdos, M. C. (2024). The resistance training dose-response: Meta-regressions exploring the effects of weekly volume and frequency on muscle hypertrophy and strength gain. <em>Sports Medicine</em>. Advance online publication.</p>
+    <p>Schoenfeld, B. J., Contreras, B., Krieger, J., Grgic, J., Delcastillo, K., Belliard, R., & Alto, A. (2019). Resistance training volume enhances muscle hypertrophy but not strength in trained men. <em>Medicine & Science in Sports & Exercise, 51</em>(1), 94–103.</p>
+    <p>Schoenfeld, B. J., Grgic, J., Van Every, D. W., & Plotkin, D. L. (2021). Loading recommendations for muscle strength, hypertrophy, and local endurance: A re-examination of the repetition continuum. <em>Sports (Basel), 9</em>(2), 32.</p>
+  </div>
+  <div class="author-strip">
+    <div class="author-dot">M</div>
+    <div>
+      <div class="author-label">Forfatter</div>
+      <div class="author-name">Marc Schlichting</div>
+      <div class="author-bio">Stifter af Entropi Coaching. Styrkeløft-coach med 8+ års erfaring.</div>
+    </div>
+  </div>
+  <a href="artikler.html" class="back-link">Tilbage til ressourcer</a>
+</div>
+<footer>
+  <div><div class="footer-logo">Entropi<span>.</span></div><div class="footer-tagline">Systematisk styrke · data, disciplin & dybde</div></div>
+  <ul class="footer-links">
+    <li><a href="index.html#filosofi">Filosofi</a></li>
+    <li><a href="resultater.html">Resultater</a></li>
+    <li><a href="coaching.html">Coaching</a></li>
+    <li><a href="https://instagram.com/entropicoaching" target="_blank">Instagram</a></li>
+  </ul>
+  <div class="footer-contact">
+    <div>Marc Schlichting</div>
+    <a href="/cdn-cgi/l/email-protection#e2818d83818aa2878c96908d928b818d83818a8b8c85cc8689"><span class="__cf_email__" data-cfemail="21424e40424961444f55534e5148424e404249484f460f454a">[email&#160;protected]</spa

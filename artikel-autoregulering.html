@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fatigue er ikke manglende fremgang | Entropi Coaching</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=IBM+Plex+Sans:wght@300;400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg:#141410;--bg2:#1c1c18;--bg3:#242420;
+    --ink:#edeae2;--ink2:#ccc8bc;--ink3:#908d84;--ink4:#4a4844;
+    --amber:#c8923a;--amber-dim:#7a5520;
+    --border:rgba(237,234,226,0.08);--border2:rgba(237,234,226,0.14);
+    --serif:'Playfair Display',Georgia,serif;
+    --sans:'IBM Plex Sans',sans-serif;
+    --mono:'IBM Plex Mono',monospace;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { background: var(--bg); color: var(--ink); font-family: var(--sans); font-weight: 300; line-height: 1.6; overflow-x: hidden; }
+
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 200; height: 56px; display: flex; align-items: center; justify-content: space-between; padding: 0 2.5rem; background: rgba(20,20,16,0.94); backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); }
+  .nav-logo { font-family: var(--serif); font-size: 1.2rem; color: var(--ink); text-decoration: none; }
+  .nav-logo span { color: var(--amber); }
+  .nav-back { font-family: var(--mono); font-size: 0.63rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink3); text-decoration: none; transition: color 0.15s; }
+  .nav-back:hover { color: var(--ink); }
+
+  /* ARTICLE LAYOUT */
+  .article-wrap {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 9rem 2rem 6rem;
+  }
+
+  /* META */
+  .article-meta {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+  }
+  .meta-tag {
+    font-family: var(--mono);
+    font-size: 0.6rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--amber);
+  }
+  .meta-divider { width: 1px; height: 12px; background: var(--border2); }
+  .meta-date {
+    font-family: var(--mono);
+    font-size: 0.6rem;
+    letter-spacing: 0.08em;
+    color: var(--ink4);
+  }
+  .meta-read {
+    font-family: var(--mono);
+    font-size: 0.6rem;
+    letter-spacing: 0.08em;
+    color: var(--ink4);
+  }
+
+  /* HEADLINE */
+  .article-title {
+    font-family: var(--serif);
+    font-size: clamp(2.2rem, 4vw, 3.2rem);
+    font-weight: 400;
+    line-height: 1.1;
+    color: var(--ink);
+    margin-bottom: 1rem;
+  }
+  .article-title em { font-style: italic; color: var(--ink3); }
+
+  .article-intro {
+    font-size: 1.05rem;
+    color: var(--ink2);
+    line-height: 1.85;
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  /* BODY */
+  .article-body p {
+    font-size: 0.97rem;
+    color: var(--ink2);
+    line-height: 1.95;
+    margin-bottom: 1.5rem;
+  }
+
+  .article-body p strong {
+    color: var(--ink);
+    font-weight: 500;
+  }
+
+  .article-body h2 {
+    font-family: var(--serif);
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: var(--ink);
+    margin: 2.5rem 0 1rem;
+    line-height: 1.2;
+  }
+
+  .article-body h2 em { font-style: italic; color: var(--ink3); }
+
+  /* PULL QUOTE */
+  .pull-quote {
+    margin: 2.5rem 0;
+    padding: 1.5rem 1.75rem;
+    border-left: 2px solid var(--amber-dim);
+    background: var(--bg2);
+  }
+  .pull-quote p {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 1.15rem;
+    color: var(--ink2);
+    line-height: 1.7;
+    margin: 0;
+  }
+
+  /* REFERENCES */
+  .references {
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border);
+  }
+  .references-label {
+    font-family: var(--mono);
+    font-size: 0.6rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink4);
+    margin-bottom: 1rem;
+  }
+  .references p {
+    font-size: 0.8rem;
+    color: var(--ink4);
+    line-height: 1.7;
+    margin-bottom: 0.5rem;
+  }
+
+  /* AUTHOR */
+  .author-strip {
+    margin-top: 3rem;
+    padding: 1.5rem;
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+  }
+  .author-label {
+    font-family: var(--mono);
+    font-size: 0.58rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink4);
+    margin-bottom: 0.3rem;
+  }
+  .author-name {
+    font-size: 0.92rem;
+    font-weight: 500;
+    color: var(--ink);
+    margin-bottom: 0.2rem;
+  }
+  .author-bio {
+    font-size: 0.82rem;
+    color: var(--ink3);
+    line-height: 1.5;
+  }
+  .author-dot {
+    width: 40px; height: 40px;
+    border-radius: 50%;
+    background: var(--amber-dim);
+    border: 1px solid var(--amber);
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--serif);
+    font-size: 1rem;
+    color: var(--amber);
+    flex-shrink: 0;
+  }
+
+  /* BACK LINK */
+  .back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink3);
+    text-decoration: none;
+    margin-top: 3rem;
+    transition: color 0.15s;
+  }
+  .back-link:hover { color: var(--ink); }
+  .back-link::before { content: '<'; color: var(--amber); }
+
+  footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 2.5rem; display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 2rem; margin-top: 4rem; }
+  .footer-logo { font-family: var(--serif); font-size: 1.1rem; color: var(--ink); }
+  .footer-logo span { color: var(--amber); }
+  .footer-tagline { font-family: var(--mono); font-size: 0.58rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink4); margin-top: 0.3rem; }
+  .footer-links { display: flex; gap: 1.75rem; list-style: none; justify-content: center; }
+  .footer-links a { font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink3); text-decoration: none; transition: color 0.15s; }
+  .footer-links a:hover { color: var(--ink); }
+  .footer-contact { text-align: right; font-size: 0.82rem; color: var(--ink3); line-height: 1.8; }
+  .footer-contact a { color: var(--ink2); text-decoration: none; }
+
+  @media(max-width: 700px) {
+    nav { padding: 0 1.25rem; }
+    .article-wrap { padding: 7rem 1.25rem 4rem; }
+    footer { grid-template-columns: 1fr; text-align: center; }
+    .footer-contact { text-align: center; }
+    .footer-links { justify-content: center; }
+  }
+</style>
+</head>
+<body style="background:#141410;color:#edeae2;">
+
+<nav>
+  <a href="index.html" class="nav-logo">Entropi<span>.</span></a>
+  <a href="artikler.html" class="nav-back">< Artikler</a>
+</nav>
+
+<div class="article-wrap">
+
+  <div class="article-meta">
+    <span class="meta-tag">Træning</span>
+    <div class="meta-divider"></div>
+    <span class="meta-date">2025</span>
+    <div class="meta-divider"></div>
+    <span class="meta-read">6 min. læsning</span>
+  </div>
+
+  <h1 class="article-title">Fatigue er ikke<br><em>manglende fremgang.</em></h1>
+
+  <p class="article-intro">Du har løftet de samme kilo i tre uger. Træningen føles tung. Du overvejer at ændre programmet. Det kan være det rigtige valg. Men det kan også være det forkerte af den forkerte årsag.</p>
+
+  <div class="article-body">
+
+    <p>Fatigue og manglende fremgang ser ens ud på overfladen. Begge resulterer i at du ikke løfter mere end du gjorde for to uger siden. Men de er fundamentalt forskellige problemer, og de kræver fundamentalt forskellige løsninger.</p>
+
+    <p>Det er et af de steder hvor mange løftere taber tid. Ikke fordi de ikke træner hård nok, men fordi de fejlfortolker hvad de ser.</p>
+
+    <h2>Kroppen viser ikke altid<br><em>hvad den kan.</em></h2>
+
+    <p>Fatigue maskerer kapacitet. Det er ikke en metafor, det er fysiologi. Når belastning akkumuleres over tid, vil præstation falde selvom den underliggende kapacitet faktisk forbedres. Kroppen er optaget med at absorbere træningen, ikke med at eksprimere hvad den har lært af den.</p>
+
+    <p>Det betyder at din præstation på platformen på et givent tidspunkt ikke er et præcist mål for din styrke. Det er et mål for din styrke minus den aktuelle fatigue.</p>
+
+    <p>Du kan blive stærkere og præstere dårligere på samme tid. Det er svært at acceptere, fordi vi er vant til at tænke på fremgang som noget lineært. Mere kilo fra uge til uge. Men adaptation fungerer ikke sådan. Perioder med fald eller stagnation i præstation er en naturlig del af en progressiv træningsproces, ikke et signal om at processen er brudt ned.</p>
+
+    <h2>To spørgsmål.<br><em>Meget forskellig diagnose.</em></h2>
+
+    <p>Når præstationen stopper med at stige, er der grundlæggende to spørgsmål du skal stille dig selv:</p>
+
+    <p><strong>Er stimulus tilstrækkelig?</strong> Belastningen skaber ikke nok forandring til at kroppen behøver at tilpasse sig. Det er reel stagnation, og her skal noget ændres.</p>
+
+    <p><strong>Er kroppen midt i en adaptationsproces?</strong> Belastningen virker, men fatigue akkumulerer hurtigere end kroppen kan eksprimere sin nye kapacitet. Her er svaret sjældent at ændre programmet. Det er at give kroppen mulighed for at vise hvad den har lært.</p>
+
+    <p>Problemet er at de to ser ens ud i dagbogen. Begge resulterer i flade tal. Men den ene kræver mere stimulus, den anden kræver mindre. Hvis du blander dem sammen, løser du det forkerte problem.</p>
+
+    <p>I praksis ser jeg dette ofte hos løftere der er midt i en opbygningsperiode. Fatiguen er reel, løftene stagnerer, og reaktionen er at skifte program eller sætte volumen ned. Resultatet er at den belastning der faktisk var ved at skabe noget, aldrig når at slå igennem.</p>
+
+    <h2>Autoregulering er ikke<br><em>et system. Det er en beslutning.</em></h2>
+
+    <p>Det her er grunden til at en planlagt belastning altid er et estimat. Programmet ved ikke hvordan du sov i nat. Det ved ikke at du havde en hård uge på arbejde. Det ved ikke at din krop er midt i en adaptationsproces der kræver mere tid end planen havde afsat.</p>
+
+    <p>Autoregulering handler om at tage den information med ind i beslutningen om hvad du løfter i dag. Ikke at smide planen væk, men at bruge den som udgangspunkt frem for facit.</p>
+
+    <p>Redskaber som RPE og RIR giver en ramme for at gøre det. RPE (Rate of Perceived Exertion) er et mål for hvor tæt en indsats er på maksimal kapacitet. RIR (Reps in Reserve) er den omvendte logik: hvor mange gentagelser havde du tilbage i tanken. Begge forsøger at sætte tal på noget subjektivt, og begge kræver erfaring for at bruges præcist.</p>
+
+    <p>Forskning tyder på at fast programmering og autoreguleret programmering ofte giver sammenlignelige resultater, særligt hos mindre erfarne løftere, hvor struktur i sig selv er nok til at skabe fremgang (Greig et al., 2020). Det peger på at autoregulering ikke er en universalløsning, men et redskab hvis værdi afhænger af kontekst og erfaring. Jo mere erfaren løfteren er, jo mere nuanceret er signalerne kroppen sender, og jo mere kan autoregulering bidrage.</p>
+
+    <p>Det vigtige er ikke selve redskabet. Det er beslutningen bag det: at du aktivt forholder dig til hvad kroppen faktisk viser dig, ikke kun hvad planen siger du skal løfte.</p>
+
+    <h2>Struktur og tilpasning<br><em>kan ikke skilles ad.</em></h2>
+
+    <p>En plan uden mulighed for justering mister gradvist sin relevans. Den er skrevet på baggrund af hvad du vidste den dag du satte dig ned og lavede den. Kroppen ændrer sig. Fatiguen akkumulerer ikke ens fra uge til uge. Konteksten ændrer sig. Planen gør det ikke af sig selv.</p>
+
+    <p>Omvendt vil løbende justering uden en overordnet retning hurtigt blive tilfældig. Du reagerer på dagsform frem for på udvikling, og du mister det langsigtede overblik der er nødvendigt for at progression faktisk sker.</p>
+
+    <p>De to hører sammen. Planen angiver retningen. Tilpasningen afgør hvordan den følges. Ingen af dem fungerer ordentligt uden den anden.</p>
+
+    <p>Så næste gang præstationen flader ud: stil spørgsmålet inden du ændrer noget. Er det fatigue eller er det fremgangen der er stoppet? Svaret bestemmer hvad du gør.</p>
+
+  </div>
+
+  <div class="references">
+    <div class="references-label">Referencer</div>
+    <p>Greig, L., Stephens Hemingway, B., Aspe, R. R., Cooper, K., Comfort, P., & Swinton, P. A. (2020). Autoregulation in resistance training: Addressing the inconsistencies. <em>Sports Medicine, 50</em>(11), 1873–1887.</p>
+    <p>Helms, E. R., Cronin, J. B., & Storey, A. G. (2016). Application of the repetitions in reserve-based rating of perceived exertion scale for resistance training. <em>Journal of Strength and Conditioning Research, 30</em>(7), 2010–2017.</p>
+    <p>Larsen, S., Kristiansen, E., & van den Tillaar, R. (2021). Effects of subjective and objective autoregulation methods for intensity and volume on enhancing maximal strength. <em>PeerJ, 9</em>, e10663.</p>
+    <p>Zatsiorsky, V. M., & Kraemer, W. J. (2006). <em>Science and practice of strength training</em> (2nd ed.). Human Kinetics.</p>
+  </div>
+
+  <div class="author-strip">
+    <div class="author-dot">M</div>
+    <div>
+      <div class="author-label">Forfatter</div>
+      <div class="author-name">Marc Schlichting</div>
+      <div class="author-bio">Stifter af Entropi Coaching. Styrkeløft-coach med 8+ års erfaring.</div>
+    </div>
+  </div>
+
+  <a href="artikler.html" class="back-link">Tilbage til ressourcer</a>
+
+</div>
+
+<footer>
+  <div>
+    <div class="footer-logo">Entropi<span>.</span></div>
+    <div class="footer-tagline">Systematisk styrke · data, disciplin & dybde</div>
+  </div>
+  <ul class="footer-links">
+    <li><a href="index.html#filosofi">Filosofi</a></li>
+    <li><a href="resultater.html">Resultater</a></li>
+    <li><a href="coaching.html">Coaching</a></li>
+    <li><a href="https://instagram.com/entropicoaching" target="_blank">Instagram</a></li>
+  </ul>
+  <div class="footer-contact">
+    <div>Marc Schlichting</div>
+    <a href="/cdn-cgi/l/email-protection#25464a44464d65404b51574a554c464a44464d4c4b420b414e"><span class="__cf_email__" data-cfemail="01626e60626941646f75736e7168626e606269686f662f656a">[email&#160;protected]</span

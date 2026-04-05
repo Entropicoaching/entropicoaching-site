@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Frekvens: den undervurderede variabel | Entropi Coaching</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=IBM+Plex+Sans:wght@300;400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#141410;--bg2:#1c1c18;--bg3:#242420;--ink:#edeae2;--ink2:#ccc8bc;--ink3:#908d84;--ink4:#4a4844;--amber:#c8923a;--amber-dim:#7a5520;--border:rgba(237,234,226,0.08);--border2:rgba(237,234,226,0.14);--serif:'Playfair Display',Georgia,serif;--sans:'IBM Plex Sans',sans-serif;--mono:'IBM Plex Mono',monospace;}
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}html{scroll-behavior:smooth;}
+  body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-weight:400;line-height:1.6;overflow-x:hidden;}
+  nav{position:fixed;top:0;left:0;right:0;z-index:200;height:56px;display:flex;align-items:center;justify-content:space-between;padding:0 2.5rem;background:rgba(20,20,16,0.94);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);}
+  .nav-logo{font-family:var(--serif);font-size:1.2rem;color:var(--ink);text-decoration:none;}.nav-logo span{color:var(--amber);}
+  .nav-back{font-family:var(--mono);font-size:0.63rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink3);text-decoration:none;transition:color 0.15s;}.nav-back:hover{color:var(--ink);}
+  .article-wrap{max-width:720px;margin:0 auto;padding:9rem 2rem 6rem;}
+  .article-meta{display:flex;align-items:center;gap:1.5rem;margin-bottom:2.5rem;}
+  .meta-tag{font-family:var(--mono);font-size:0.6rem;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:var(--amber);}
+  .meta-divider{width:1px;height:12px;background:var(--border2);}
+  .meta-date,.meta-read{font-family:var(--mono);font-size:0.6rem;letter-spacing:0.08em;color:var(--ink4);}
+  .article-title{font-family:var(--serif);font-size:clamp(2.2rem,4vw,3.2rem);font-weight:400;line-height:1.1;color:var(--ink);margin-bottom:1rem;}
+  .article-title em{font-style:italic;color:var(--ink3);}
+  .article-intro{font-size:1.05rem;color:var(--ink2);line-height:1.85;margin-bottom:3rem;padding-bottom:2rem;border-bottom:1px solid var(--border);}
+  .article-body p{font-size:0.97rem;color:var(--ink2);line-height:1.95;margin-bottom:1.5rem;}
+  .article-body p strong{color:var(--ink);font-weight:500;}
+  .article-body h2{font-family:var(--serif);font-size:1.5rem;font-weight:400;color:var(--ink);margin:2.5rem 0 1rem;line-height:1.2;}
+  .article-body h2 em{font-style:italic;color:var(--ink3);}
+  .note{margin:2rem 0;padding:1.25rem 1.5rem;background:var(--bg2);border-left:2px solid var(--amber-dim);}
+  .note-label{font-family:var(--mono);font-size:0.58rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--amber);margin-bottom:0.5rem;}
+  .note p{font-size:0.88rem;color:var(--ink3);line-height:1.75;margin:0;font-style:italic;}
+  .reflection{margin:2.5rem 0;padding:1.5rem;background:var(--bg3);border:1px solid var(--border2);}
+  .reflection-label{font-family:var(--mono);font-size:0.58rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--amber);margin-bottom:0.75rem;}
+  .reflection ul{list-style:none;display:flex;flex-direction:column;gap:0.6rem;}
+  .reflection ul li{font-size:0.9rem;color:var(--ink2);line-height:1.65;padding-left:1.25rem;position:relative;}
+  .reflection ul li::before{content:'-';position:absolute;left:0;color:var(--amber-dim);font-family:var(--mono);}
+  .references{margin-top:4rem;padding-top:2rem;border-top:1px solid var(--border);}
+  .references-label{font-family:var(--mono);font-size:0.6rem;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink4);margin-bottom:1rem;}
+  .references p{font-size:0.8rem;color:var(--ink4);line-height:1.7;margin-bottom:0.5rem;}
+  .author-strip{margin-top:3rem;padding:1.5rem;background:var(--bg2);border:1px solid var(--border);display:flex;align-items:center;gap:1.25rem;}
+  .author-label{font-family:var(--mono);font-size:0.58rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink4);margin-bottom:0.3rem;}
+  .author-name{font-size:0.92rem;font-weight:500;color:var(--ink);margin-bottom:0.2rem;}
+  .author-bio{font-size:0.82rem;color:var(--ink3);line-height:1.5;}
+  .author-dot{width:40px;height:40px;border-radius:50%;background:var(--amber-dim);border:1px solid var(--amber);display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:1rem;color:var(--amber);flex-shrink:0;}
+  .back-link{display:inline-flex;align-items:center;gap:0.5rem;font-family:var(--mono);font-size:0.65rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink3);text-decoration:none;margin-top:3rem;transition:color 0.15s;}.back-link:hover{color:var(--ink);}.back-link::before{content:'←';color:var(--amber);}
+  footer{background:var(--bg2);border-top:1px solid var(--border);padding:2.5rem;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:2rem;margin-top:4rem;}
+  .footer-logo{font-family:var(--serif);font-size:1.1rem;color:var(--ink);}.footer-logo span{color:var(--amber);}
+  .footer-tagline{font-family:var(--mono);font-size:0.58rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink4);margin-top:0.3rem;}
+  .footer-links{display:flex;gap:1.75rem;list-style:none;justify-content:center;}
+  .footer-links a{font-family:var(--mono);font-size:0.6rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink3);text-decoration:none;transition:color 0.15s;}.footer-links a:hover{color:var(--ink);}
+  .footer-contact{text-align:right;font-size:0.82rem;color:var(--ink3);line-height:1.8;}.footer-contact a{color:var(--ink2);text-decoration:none;}
+  @media(max-width:700px){nav{padding:0 1.25rem;}.article-wrap{padding:7rem 1.25rem 4rem;}footer{grid-template-columns:1fr;text-align:center;}.footer-contact{text-align:center;}.footer-links{justify-content:center;}}
+</style>
+</head>
+<body style="background:#141410;color:#edeae2;">
+<nav>
+  <a href="index.html" class="nav-logo">Entropi<span>.</span></a>
+  <a href="artikler.html" class="nav-back">< Artikler</a>
+</nav>
+<div class="article-wrap">
+  <div class="article-meta">
+    <span class="meta-tag">Programmering</span>
+    <div class="meta-divider"></div>
+    <span class="meta-date">2025</span>
+    <div class="meta-divider"></div>
+    <span class="meta-read">8 min. læsning</span>
+  </div>
+  <h1 class="article-title">Frekvens: den<br><em>undervurderede variabel.</em></h1>
+  <p class="article-intro">Spørger du de fleste løftere om frekvens, handler svaret typisk om skema og logistik. Hvornår passer det ind i ugen? Men frekvens er en programmeringsmæssig beslutning med konsekvenser for adaptation, fatigue og teknisk udvikling. Det er værd at behandle den som det.</p>
+  <div class="article-body">
+
+    <h2>Hvad frekvens<br><em>egentlig bestemmer.</em></h2>
+    <p>Frekvens beskriver hvor mange gange du træner et løft eller en muskelgruppe inden for en given periode, typisk pr. uge. Det lyder simpelt. Men bag det simple tal ligger et valg med vidtrækkende konsekvenser for hvad der faktisk sker i kroppen.</p>
+    <p>Frekvens bestemmer ikke bare hvornår du løfter. Det bestemmer hvordan den ugentlige belastning er distribueret, hvilken fatigue-profil du opererer under, og hvor hyppigt bevægelsesmønstrene øves. Ændrer du frekvens, ændrer du ikke bare skemaet, du ændrer stimulusmønsteret.</p>
+
+    <h2>Hvad forskningen viser:<br><em>styrke og hypertrofi reagerer forskelligt.</em></h2>
+    <p>Pelland et al. (2024) fandt i deres meta-analyse at øget frekvens er positivt associeret med styrkefremgang, med aftagende udbytte ved meget høj frekvens. For hypertrofi var billedet markant anderledes: frekvens ser ikke ud til at have en konsistent selvstændig effekt på muskelvækst, når den ugentlige volumen holdes ens på tværs af grupper.</p>
+    <p>Det er et vigtigt skel der ofte overses. Frekvens ser ud til at have en særlig relevans for styrke, ikke primært fordi mere frekvens giver mere stimulus i sig selv, men fordi det ændrer hvordan stimulus distribueres og hvilken type adaptation der drives.</p>
+    <p>Schoenfeld et al. (2016) konkluderede i en meta-analyse af frekvens og hypertrofi at to træninger pr. muskelgruppe pr. uge ser ud til at være overlegent frem for én, men at der er begrænset evidens for at yderligere øgning i frekvens giver proportionalt mere hypertrofi. For styrke er tendensen til fordel for højere frekvens mere konsistent, men stadig med aftagende udbytte.</p>
+
+    <h2>Frekvens og teknisk<br><em>kompetence.</em></h2>
+    <p>Et argument for frekvens der sjældent fremhæves i forskning er dets rolle i teknisk læring. Squat, bænkpres og dødløft er komplekse bevægelsesmønstre der kræver mange repetitioner over tid for at blive konsistente under høj belastning. Motorisk indlæring er ikke primært et spørgsmål om intensitet, det er et spørgsmål om hyppighed og kvalitet af øvelse.</p>
+    <p>En løfter der squatter tre gange om ugen akkumulerer 156 squat-sessioner på et år. En løfter der squatter én gang om ugen akkumulerer 52. Begge kan have det samme ugentlige sæt-antal. Men den ene har tre gange så mange muligheder for at øve bevægningsmønsteret, modtage feedback og konsolidere teknisk læring. Over et træningsår er den forskel substantiel.</p>
+    <p>Det er ikke et absolut argument for høj frekvens. Det er et argument for at frekvens har en funktion der rækker ud over det rent fysiologiske, og at det spørgsmål bør indgå i overvejelsen om programdesign.</p>
+
+    <h2>Frekvens og<br><em>fatigue-distribution.</em></h2>
+    <p>En praktisk konsekvens af frekvens er at den bestemmer hvordan den ugentlige belastning er distribueret i tid. Tages al squat-volumen på én dag, er fatigue-profilen koncentreret. Spredt over to eller tre sessioner er den mere jævnt fordelt.</p>
+    <p>Der er grænser for hvor meget effektivt arbejde kroppen kan udføre i en enkelt session. Høj volumen koncentreret på én dag kan overstige den grænse og resultere i kvalitativt dårligere arbejde hen mod slutningen af sessionen. Fordelt over flere sessioner kan den samme volumen potentielt give et mere konsistent stimulus. Det er ikke givet at dette altid er bedre, men det er et reelt hensyn.</p>
+    <p>Det hænger sammen med fatigue-akkumulering over ugen som helhed. Høj frekvens kræver at recovery er tilstrækkelig imellem sessioner. Utilstrækkelig recovery eliminerer fordelene ved hyppig eksponering og kan i stedet skabe et underskud der kompromitterer adaptation.</p>
+
+    <div class="note">
+      <div class="note-label">Kildekritik</div>
+      <p>Frekvens-forskning er metodisk vanskelig fordi det er svært at isolere frekvens fra volumen. Mange studier equater ikke volumen perfekt på tværs af frekvensgrupper, og kortere studievarighed gør det vanskeligt at konkludere på langsigtede effekter. Pelland et al. (2024) er det mest systematiske forsøg på at adressere dette, men forfatterne understreger selv behovet for mere forskning, særligt på trænede løftere der anvender styrkeløft-specifikke rep-ranges.</p>
+    </div>
+
+    <h2>Ingen universel<br><em>optimal frekvens.</em></h2>
+    <p>Observationsdata fra konkurrenceløftere viser at de fleste træner de tre konkurrenceløft 2-3 gange om ugen (Kataoka et al., 2023). Det afspejler en praksis der er opstået empirisk over årtier i et miljø med høj præstationsfokus. Men det er ikke en foreskrift, det er en beskrivelse af hvad en bestemt gruppe løftere under bestemte betingelser har valgt at gøre.</p>
+    <p>Optimal frekvens afhænger af løfterens niveau og tekniske kompetence, den samlede volumen og intensitet i programmet, den individuelle recovery-kapacitet og de praktiske rammer for træningen. En nybegynder kan have stor gavn af højere frekvens for at opbygge teknisk kompetence. En avanceret løfter med høj ugentlig volumen kan have behov for mere recovery imellem sessioner og dermed lavere frekvens.</p>
+    <p>Frekvens er ikke et tal der skal optimeres i isolation. Det er et redskab der skal tilpasses det specifikke program, den specifikke løfter og det specifikke mål, og som vil se anderledes ud i en opbygningsperiode end i en peaking-periode op mod stævne.</p>
+
+    <div class="reflection">
+      <div class="reflection-label">Refleksioner til din træning</div>
+      <ul>
+        <li>Overvej om din nuværende frekvens er bestemt af programmeringsmæssige overvejelser eller af hvad der er praktisk muligt tidsmæssigt. Begge er legitime udgangspunkter, men det er nyttigt at vide hvilken det er.</li>
+        <li>Hvis du kæmper med et teknisk element i et af løftene: ville højere frekvens give dig mere mulighed for at øve og konsolidere det? Teknisk indlæring kræver hyppighed, ikke kun intensitet.</li>
+        <li>Eksperimenter med at registrere din sætkvalitet hen mod slutningen af de sessioner med høj volumen. Falder kvaliteten markant? Det kan indikere at volumenet er for koncentreret og ville fungere bedre fordelt over mere tid.</li>
+        <li>Husk at frekvens og volumen interagerer. Øger du frekvens uden at justere volumen, øger du den samlede belastning. Det er ikke nødvendigvis forkert, men det er en bevidst beslutning, ikke en neutral ændring.</li>
+      </ul>
+    </div>
+
+  </div>
+  <div class="references">
+    <div class="references-label">Referencer</div>
+    <p>Kataoka, R., Hammert, W. B., Yamada, Y., Song, J. S., Kang, M., & Abe, T. (2023). Body composition and maximal strength of powerlifters: A descriptive quantitative and longitudinal study. <em>Frontiers in Sports and Active Living, 5</em>, 1219956.</p>
+    <p>Pelland, J. C., Remmert, J., Robinson, Z. P., Hinson, S., & Zourdos, M. C. (2024). The resistance training dose-response: Meta-regressions exploring the effects of weekly volume and frequency on muscle hypertrophy and strength gain. <em>Sports Medicine</em>. Advance online publication.</p>
+    <p>Schoenfeld, B. J., Ogborn, D., & Krieger, J. W. (2016). Effects of resistance training frequency on measures of muscle hypertrophy: A systematic review and meta-analysis. <em>Sports Medicine, 46</em>(11), 1689–1697.</p>
+    <p>Heaselgrave, S. R., Blacker, J., Smeuninx, B., McKendry, J., & Breen, L. (2019). Dose-response relationship of weekly resistance-training volume and frequency on muscular adaptations in trained men. <em>International Journal of Sports Physiology and Performance, 14</em>(3), 360–368.</p>
+  </div>
+  <div class="author-strip">
+    <div class="author-dot">M</div>
+    <div>
+      <div class="author-label">Forfatter</div>
+      <div class="author-name">Marc Schlichting</div>
+      <div class="author-bio">Stifter af Entropi Coaching. Styrkeløft-coach med 8+ års erfaring.</div>
+    </div>
+  </div>
+  <a href="artikler.html" class="back-link">Tilbage til ressourcer</a>
+</div>
+<footer>
+  <div><div class="footer-logo">Entropi<span>.</span></div><div class="footer-tagline">Systematisk styrke · data, disciplin & dybde</div></div>
+  <ul class="footer-links">
+    <li><a href="index.html#filosofi">Filosofi</a></li>
+    <li><a href="resultater.html">Resultater</a></li>
+    <li><a href="coaching.html">Coaching</a></li>
+    <li><a href="https://instagram.com/entropicoaching" target="_blank">Instagram</a></li>
+  </ul>
+  <div class="footer-contact">
+    <div>Marc Schlichting</div>
+    <a href="/cdn-cgi/l/email-protection#0a69656b69624a6f647e78657a6369656b696263646d246e61"><span class="__cf_email__" data-cfemail="4b28242a28230b2e253f39243b2228242a282322252c652f20">[email&#160;protected]</spa

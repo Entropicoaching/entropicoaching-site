@@ -8,8 +8,8 @@
   --bg3:       #242420;
   --bg4:       #2e2e28;
   --ink:       #edeae2;
-  --ink2:      #b8b4a8;
-  --ink3:      #7a7770;
+  --ink2:      #ccc8bc;
+  --ink3:      #908d84;
   --ink4:      #4a4844;
   --amber:     #c8923a;
   --amber-dim: #7a5520;
@@ -24,7 +24,7 @@
 html { scroll-behavior: smooth; }
 body {
   background: var(--bg); color: var(--ink);
-  font-family: var(--sans); font-weight: 300;
+  font-family: var(--sans); font-weight: 400;
   line-height: 1.6; overflow-x: hidden;
 }
 
@@ -40,13 +40,13 @@ nav {
 .nav-logo span { color: var(--amber); }
 .nav-links { display: flex; gap: 2rem; list-style: none; }
 .nav-links a {
-  font-family: var(--mono); font-size: 0.63rem; font-weight: 500;
+  font-family: var(--mono); font-size: 0.7rem; font-weight: 500;
   letter-spacing: 0.12em; text-transform: uppercase;
   color: var(--ink3); text-decoration: none; transition: color 0.15s;
 }
 .nav-links a:hover, .nav-links a.active { color: var(--ink); }
 .nav-cta {
-  font-family: var(--mono); font-size: 0.63rem; font-weight: 500;
+  font-family: var(--mono); font-size: 0.7rem; font-weight: 500;
   letter-spacing: 0.1em; text-transform: uppercase;
   color: var(--amber); text-decoration: none;
   border: 1px solid var(--amber-dim); padding: 0.42rem 1rem;
@@ -89,7 +89,7 @@ nav {
 /* ---- SHARED SECTION STYLES ---- */
 section { padding: 5.5rem 2.5rem; }
 .section-eyebrow {
-  font-family: var(--mono); font-size: 0.6rem; font-weight: 500;
+  font-family: var(--mono); font-size: 0.65rem; font-weight: 500;
   letter-spacing: 0.18em; text-transform: uppercase; color: var(--amber);
   margin-bottom: 1.25rem; display: flex; align-items: center; gap: 0.75rem;
 }
@@ -101,7 +101,7 @@ section { padding: 5.5rem 2.5rem; }
   display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: end;
 }
 .page-eyebrow {
-  font-family: var(--mono); font-size: 0.63rem; font-weight: 500;
+  font-family: var(--mono); font-size: 0.7rem; font-weight: 500;
   letter-spacing: 0.18em; text-transform: uppercase; color: var(--amber);
   margin-bottom: 1.25rem; display: flex; align-items: center; gap: 0.75rem;
 }
@@ -141,12 +141,12 @@ footer {
 .footer-logo { font-family: var(--serif); font-size: 1.1rem; color: var(--ink); }
 .footer-logo span { color: var(--amber); }
 .footer-tagline {
-  font-family: var(--mono); font-size: 0.58rem;
+  font-family: var(--mono); font-size: 0.65rem;
   letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink4); margin-top: 0.3rem;
 }
 .footer-links { display: flex; gap: 1.75rem; list-style: none; justify-content: center; }
 .footer-links a {
-  font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.1em;
+  font-family: var(--mono); font-size: 0.65rem; letter-spacing: 0.1em;
   text-transform: uppercase; color: var(--ink3); text-decoration: none; transition: color 0.15s;
 }
 .footer-links a:hover { color: var(--ink); }
