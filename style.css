@@ -191,3 +191,24 @@ footer {
   .footer-contact { text-align: center; }
   .footer-links { justify-content: center; }
 }
+
+
+/* ---- MOBILE STICKY CTA BAR ---- */
+.mobile-cta-bar { display: none; }
+@media (max-width: 900px) {
+  nav > .nav-cta { display: none; }
+  body { padding-bottom: 4.5rem; }
+  .mobile-cta-bar {
+    display: block; position: fixed; left: 0; right: 0; bottom: 0; z-index: 195;
+    padding: 0.7rem 1rem calc(0.7rem + env(safe-area-inset-bottom));
+    background: rgba(20,20,16,0.94); backdrop-filter: blur(16px);
+    border-top: 1px solid var(--border);
+  }
+  .mobile-cta-bar a {
+    display: block; text-align: center;
+    font-family: var(--mono); font-size: 0.72rem; font-weight: 500;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--bg); background: var(--amber);
+    padding: 0.85rem 1rem; text-decoration: none;
+  }
+}
