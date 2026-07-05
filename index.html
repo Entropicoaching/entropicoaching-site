@@ -148,16 +148,24 @@
   .article-card-body { font-size: 0.84rem; color: var(--ink3); line-height: 1.75; margin-bottom: 1.25rem; }
   .article-card-meta { font-family: var(--mono); font-size: 0.58rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink4); margin-top: auto; padding-top: 1rem; border-top: 1px solid var(--border); }
 
-  /* VIDEOCOACH (slankt baand) */
-  .videocoach-banner { display: flex; align-items: center; gap: 1.25rem; padding: 0.9rem 2.5rem; background: var(--bg2); border-bottom: 1px solid var(--border); text-decoration: none; transition: background 0.2s; }
-  .videocoach-banner:hover { background: var(--bg3); }
-  .vc-path { flex-shrink: 0; width: 58px; height: 26px; }
-  .vc-tag { font-family: var(--mono); font-size: 0.57rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--amber); flex-shrink: 0; }
-  .vc-text { font-size: 0.85rem; color: var(--ink3); line-height: 1.4; }
-  .vc-text strong { color: var(--ink); font-weight: 500; }
-  .vc-cta { margin-left: auto; font-family: var(--mono); font-size: 0.64rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--amber); white-space: nowrap; display: inline-flex; align-items: center; gap: 0.5rem; }
-  .vc-cta .vc-arrow { transition: transform 0.2s; }
-  .videocoach-banner:hover .vc-arrow { transform: translateX(4px); }
+  /* VIDEOCOACH (feature-blok) */
+  .videocoach { background: var(--bg2); border-bottom: 1px solid var(--border); }
+  .videocoach-inner { display: grid; grid-template-columns: 1.1fr 1fr; gap: 3.5rem; align-items: center; }
+  .vc-eyebrow { font-family: var(--mono); font-size: 0.6rem; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: var(--amber); display: flex; align-items: center; gap: 0.7rem; margin-bottom: 1.25rem; }
+  .vc-eyebrow::before { content: ''; width: 18px; height: 1px; background: var(--amber-dim); }
+  .vc-heading { font-family: var(--serif); font-size: clamp(1.8rem, 2.8vw, 2.6rem); font-weight: 400; line-height: 1.1; color: var(--ink); margin-bottom: 1.25rem; }
+  .vc-heading em { font-style: italic; color: var(--ink3); }
+  .vc-body { font-size: 0.93rem; color: var(--ink2); line-height: 1.85; margin-bottom: 1rem; max-width: 470px; }
+  .vc-free { font-size: 0.86rem; color: var(--ink3); line-height: 1.8; margin-bottom: 1.75rem; max-width: 470px; }
+  .vc-free strong { color: var(--ink); font-weight: 500; }
+  .vc-link { display: inline-flex; align-items: center; gap: 0.6rem; font-family: var(--mono); font-size: 0.68rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--amber); text-decoration: none; padding-bottom: 0.35rem; border-bottom: 1px solid var(--amber-dim); transition: color 0.15s; }
+  .vc-link:hover { color: var(--ink); }
+  .vc-link .vc-arrow { transition: transform 0.2s; }
+  .vc-link:hover .vc-arrow { transform: translateX(4px); }
+  .vc-visual { border: 1px solid var(--border2); background: var(--bg); padding: 1.25rem 1.5rem 1.5rem; }
+  .vc-visual-top { display: flex; justify-content: space-between; align-items: center; font-family: var(--mono); font-size: 0.55rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink4); margin-bottom: 0.9rem; }
+  .vc-visual-top .vc-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--amber); display: inline-block; margin-right: 0.45rem; vertical-align: middle; }
+  .vc-visual svg { width: 100%; height: auto; display: block; }
 
   @media (max-width: 900px) {
     .hero { grid-template-columns: 1fr; }
@@ -172,9 +180,7 @@
     .coaching-inner { grid-template-columns: 1fr; }
     .coaching-left { border-right: none; border-bottom: 1px solid var(--border); }
     .viden-grid { grid-template-columns: 1fr; }
-    .videocoach-banner { flex-wrap: wrap; gap: 0.55rem 1rem; padding: 0.9rem 1.5rem; }
-    .vc-cta { margin-left: 0; }
-    .vc-path { display: none; }
+    .videocoach-inner { grid-template-columns: 1fr; gap: 2.5rem; }
   }
 </style>
 <link rel="canonical" href="https://entropicoaching.dk/">
@@ -276,19 +282,6 @@
   <div class="stat reveal"><div class="stat-num">12<sup>+</sup></div><div class="stat-label">Års styrkeløft-erfaring</div></div>
 </div>
 
-<!-- VIDEOCOACH (slankt baand, lead-magnet) -->
-<a class="videocoach-banner" href="https://app.entropicoaching.dk/videocoach.html">
-  <svg class="vc-path" viewBox="0 0 58 26" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-    <path d="M4 21 C 13 6, 21 6, 29 13 S 45 22, 54 6" stroke="var(--amber)" stroke-width="1.6" stroke-linecap="round"/>
-    <circle cx="54" cy="6" r="2.6" fill="var(--amber)"/>
-    <line x1="4" y1="21" x2="4" y2="25" stroke="var(--amber-dim)" stroke-width="1"/>
-    <line x1="29" y1="13" x2="29" y2="25" stroke="var(--amber-dim)" stroke-width="1"/>
-  </svg>
-  <span class="vc-tag">Videocoach</span>
-  <span class="vc-text"><strong>Se dit løfts stangbane og fart.</strong> Gratis videoanalyse, ingen signup.</span>
-  <span class="vc-cta"><span class="vc-arrow">&rarr;</span></span>
-</a>
-
 <!-- PHILOSOPHY -->
 <section class="philosophy" id="filosofi">
   <div class="philosophy-inner">
@@ -318,6 +311,38 @@
         <span class="p-num">04</span>
         <div><div class="p-title">Langsigtet udvikling</div><div class="p-body">Ingen 12-ugers mirakler. Vi bygger løftere der kan præstere konsekvent over år, ikke måneder.</div></div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- VIDEOCOACH (feature-blok, lead-magnet) -->
+<section class="videocoach">
+  <div class="videocoach-inner">
+    <div>
+      <div class="vc-eyebrow">Videocoach · bygget af Entropi</div>
+      <h2 class="vc-heading">Se dit løft <em>som data.</em></h2>
+      <p class="vc-body">Videocoach er et analyseværktøj jeg har kodet fra bunden. Upload et løft, og se stangens bane og fart lagt frem for dig, sæt for sæt. Ren teknik, ingen fornemmelser.</p>
+      <p class="vc-free"><strong>Det her er en fri, begrænset udgave.</strong> Den fulde analyse kører jeg sammen med mine atleter inde i coachingen.</p>
+      <a class="vc-link" href="https://app.entropicoaching.dk/videocoach.html">Åbn Videocoach <span class="vc-arrow">&rarr;</span></a>
+    </div>
+    <div class="vc-visual">
+      <div class="vc-visual-top"><span><span class="vc-dot"></span>Stangbane</span><span>fart · m/s</span></div>
+      <svg viewBox="0 0 360 200" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <line x1="60" y1="10" x2="60" y2="190" stroke="var(--border)" stroke-width="1"/>
+        <line x1="120" y1="10" x2="120" y2="190" stroke="var(--border)" stroke-width="1"/>
+        <line x1="180" y1="10" x2="180" y2="190" stroke="var(--border)" stroke-width="1"/>
+        <line x1="240" y1="10" x2="240" y2="190" stroke="var(--border)" stroke-width="1"/>
+        <line x1="300" y1="10" x2="300" y2="190" stroke="var(--border)" stroke-width="1"/>
+        <line x1="20" y1="50" x2="340" y2="50" stroke="var(--border)" stroke-width="1"/>
+        <line x1="20" y1="100" x2="340" y2="100" stroke="var(--border)" stroke-width="1"/>
+        <line x1="20" y1="150" x2="340" y2="150" stroke="var(--border)" stroke-width="1"/>
+        <path d="M175 182 C 150 150, 205 122, 172 96 C 148 72, 200 46, 178 20" stroke="var(--amber)" stroke-width="2.2" stroke-linecap="round"/>
+        <circle cx="175" cy="182" r="3.4" fill="var(--amber)"/>
+        <circle cx="172" cy="96" r="3.4" fill="var(--amber)"/>
+        <circle cx="178" cy="20" r="3.4" fill="var(--amber)"/>
+        <circle cx="188" cy="140" r="2.4" fill="var(--amber-dim)"/>
+        <circle cx="164" cy="58" r="2.4" fill="var(--amber-dim)"/>
+      </svg>
     </div>
   </div>
 </section>
