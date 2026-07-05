@@ -132,6 +132,22 @@
   .about-heading em { font-style: italic; color: var(--ink3); }
   .about-body { font-size: 0.93rem; color: var(--ink2); line-height: 1.9; margin-bottom: 1.25rem; }
 
+  /* VIDEN (artikel-strib) */
+  .viden { background: var(--bg2); border-bottom: 1px solid var(--border); }
+  .viden-head { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 2.5rem; gap: 2rem; flex-wrap: wrap; }
+  .viden-heading { font-family: var(--serif); font-size: clamp(1.9rem, 2.8vw, 2.6rem); font-weight: 400; line-height: 1.1; color: var(--ink); margin-top: 0.75rem; }
+  .viden-heading em { font-style: italic; color: var(--ink3); }
+  .viden-all { font-family: var(--mono); font-size: 0.68rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--amber); text-decoration: none; white-space: nowrap; padding-bottom: 0.35rem; border-bottom: 1px solid var(--amber-dim); transition: color 0.15s; }
+  .viden-all:hover { color: var(--ink); }
+  .viden-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--border); }
+  .article-card { background: var(--bg2); padding: 2.25rem 1.75rem; border-top: 2px solid transparent; transition: border-color 0.2s, background 0.2s; display: flex; flex-direction: column; text-decoration: none; }
+  .article-card:hover { border-top-color: var(--amber); background: var(--bg); }
+  .article-card-tag { font-family: var(--mono); font-size: 0.58rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--amber); margin-bottom: 1rem; }
+  .article-card-title { font-family: var(--serif); font-size: 1.35rem; font-weight: 400; color: var(--ink); line-height: 1.2; margin-bottom: 0.75rem; }
+  .article-card-title em { font-style: italic; color: var(--ink3); }
+  .article-card-body { font-size: 0.84rem; color: var(--ink3); line-height: 1.75; margin-bottom: 1.25rem; }
+  .article-card-meta { font-family: var(--mono); font-size: 0.58rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink4); margin-top: auto; padding-top: 1rem; border-top: 1px solid var(--border); }
+
   @media (max-width: 900px) {
     .hero { grid-template-columns: 1fr; }
     .hero-left { padding: 4rem 1.5rem 3rem; }
@@ -144,6 +160,7 @@
     .achievements-grid { grid-template-columns: 1fr; }
     .coaching-inner { grid-template-columns: 1fr; }
     .coaching-left { border-right: none; border-bottom: 1px solid var(--border); }
+    .viden-grid { grid-template-columns: 1fr; }
   }
 </style>
 <link rel="canonical" href="https://entropicoaching.dk/">
@@ -184,13 +201,10 @@
 <nav>
   <a href="index.html" class="nav-logo">Entropi<span>.</span></a>
   <ul class="nav-links">
-    <li><a href="index.html#filosofi">Filosofi</a></li>
-    <li><a href="resultater.html">Resultater</a></li>
     <li><a href="coaching.html">Coaching</a></li>
-    <li><a href="programmer.html">Programmer</a></li>
-    <li><a href="artikler.html">Artikler</a></li>
+    <li><a href="resultater.html">Resultater</a></li>
+    <li><a href="viden.html">Viden</a></li>
     <li><a href="om.html">Om Entropi</a></li>
-    <li><a href="https://app.entropicoaching.dk">Atletportal</a></li>
   </ul>
   <button class="nav-hamburger" aria-label="Menu">
     <span></span><span></span><span></span>
@@ -198,11 +212,9 @@
   <a href="coaching.html#ansoeg" class="nav-cta">Ansøg om coaching</a>
 </nav>
 <div class="mobile-menu">
-  <a href="index.html#filosofi">Filosofi</a>
-  <a href="resultater.html">Resultater</a>
   <a href="coaching.html">Coaching</a>
-  <a href="programmer.html">Programmer</a>
-  <a href="artikler.html">Artikler</a>
+  <a href="resultater.html">Resultater</a>
+  <a href="viden.html">Viden</a>
   <a href="om.html">Om Entropi</a>
   <a href="https://app.entropicoaching.dk">Portal</a>
   <a href="coaching.html#ansoeg" class="nav-cta">Ansøg om coaching</a>
@@ -280,6 +292,37 @@
         <div><div class="p-title">Langsigtet udvikling</div><div class="p-body">Ingen 12-ugers mirakler. Vi bygger løftere der kan præstere konsekvent over år, ikke måneder.</div></div>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- VIDEN (artikel-strib) -->
+<section class="viden">
+  <div class="viden-head reveal">
+    <div>
+      <p class="section-eyebrow">Viden</p>
+      <h2 class="viden-heading">Forstå principperne<br><em>bag programmeringen.</em></h2>
+    </div>
+    <a href="artikler.html" class="viden-all">Alle artikler &rarr;</a>
+  </div>
+  <div class="viden-grid reveal">
+    <a href="artikel-volumen.html" class="article-card">
+      <div class="article-card-tag">Programmering</div>
+      <div class="article-card-title">Volumen er ikke<br><em>bare sæt gange reps.</em></div>
+      <div class="article-card-body">Volumen er den mest omtalte variabel i styrketræning. Men den er også den mest misforståede.</div>
+      <div class="article-card-meta">2025 · 7 min. læsning</div>
+    </a>
+    <a href="artikel-intensitet.html" class="article-card">
+      <div class="article-card-tag">Programmering</div>
+      <div class="article-card-title">Intensitet handler ikke om<br><em>hvor hårdt det føles.</em></div>
+      <div class="article-card-body">Intensitet i styrketræning er et præcist begreb. Problemet er at det bruges upræcist.</div>
+      <div class="article-card-meta">2025 · 6 min. læsning</div>
+    </a>
+    <a href="artikel-autoregulering.html" class="article-card">
+      <div class="article-card-tag">Træning</div>
+      <div class="article-card-title">Fatigue er ikke<br><em>manglende fremgang.</em></div>
+      <div class="article-card-body">Du har løftet de samme kilo i tre uger. Men er det fatigue eller reel stagnation? Svaret bestemmer alt.</div>
+      <div class="article-card-meta">2025 · 6 min. læsning</div>
+    </a>
   </div>
 </section>
 
@@ -369,11 +412,11 @@
     <div class="footer-tagline">Systematisk styrke · data, disciplin & dybde</div>
   </div>
   <ul class="footer-links">
-    <li><a href="#filosofi">Filosofi</a></li>
-    <li><a href="resultater.html">Resultater</a></li>
     <li><a href="coaching.html">Coaching</a></li>
-    <li><a href="programmer.html">Programmer</a></li>
-    <li><a href="artikler.html">Artikler</a></li>
+    <li><a href="resultater.html">Resultater</a></li>
+    <li><a href="viden.html">Viden</a></li>
+    <li><a href="om.html">Om Entropi</a></li>
+    <li><a href="https://app.entropicoaching.dk">Atletportal</a></li>
     <li><a href="https://instagram.com/entropicoaching" target="_blank" rel="noopener">Instagram</a></li>
   </ul>
   <div class="footer-contact">

@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Artikler | Entropi Coaching</title>
-<meta name="description" content="Artikler om styrkeløft-træning: volumen, intensitet, frekvens og autoregulering. Evidensbaseret viden fra Entropi Coaching.">
+<title>Viden | Entropi Coaching</title>
+<meta name="description" content="Artikler og gratis programmer om styrkeløft-træning: volumen, intensitet, frekvens og autoregulering. Evidensbaseret viden fra Entropi Coaching.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=IBM+Plex+Sans:wght@300;400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -20,20 +20,33 @@
   .article-card-meta { font-family: var(--mono); font-size: 0.58rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink4); margin-top: auto; padding-top: 1rem; border-top: 1px solid var(--border); }
 
   .articles-section { background: var(--bg); border-bottom: 1px solid var(--border); }
+  .programmer-section { background: var(--bg2); border-bottom: 1px solid var(--border); }
+  .programmer-teaser { display: grid; grid-template-columns: 1.1fr 1fr; border: 1px solid var(--border); background: var(--bg); }
+  .programmer-teaser-left { padding: 3rem; border-right: 1px solid var(--border); }
+  .programmer-teaser-tag { font-family: var(--mono); font-size: 0.58rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--amber); margin-bottom: 1rem; }
+  .programmer-teaser-title { font-family: var(--serif); font-size: clamp(1.7rem, 2.4vw, 2.3rem); font-weight: 400; color: var(--ink); line-height: 1.15; margin-bottom: 1.25rem; }
+  .programmer-teaser-title em { font-style: italic; color: var(--ink3); }
+  .programmer-teaser-body { font-size: 0.92rem; color: var(--ink2); line-height: 1.85; margin-bottom: 1.75rem; }
+  .programmer-teaser-right { padding: 3rem; display: flex; flex-direction: column; justify-content: center; gap: 1.1rem; }
+  .programmer-point { display: grid; grid-template-columns: 1.75rem 1fr; gap: 0.75rem; align-items: start; }
+  .programmer-point .pp-num { font-family: var(--mono); font-size: 0.63rem; color: var(--amber); font-weight: 500; padding-top: 0.15rem; }
+  .programmer-point .pp-text { font-size: 0.85rem; color: var(--ink3); line-height: 1.7; }
 
   @media (max-width: 900px) {
     .articles-grid { grid-template-columns: 1fr; }
+    .programmer-teaser { grid-template-columns: 1fr; }
+    .programmer-teaser-left { border-right: none; border-bottom: 1px solid var(--border); }
   }
 </style>
-<link rel="canonical" href="https://entropicoaching.dk/artikler.html">
-<meta property="og:title" content="Artikler | Entropi Coaching">
-<meta property="og:description" content="Artikler om styrkeløft-træning: volumen, intensitet, frekvens og autoregulering. Evidensbaseret viden fra Entropi Coaching.">
-<meta property="og:url" content="https://entropicoaching.dk/artikler.html">
+<link rel="canonical" href="https://entropicoaching.dk/viden.html">
+<meta property="og:title" content="Viden | Entropi Coaching">
+<meta property="og:description" content="Artikler og gratis programmer om styrkeløft-træning. Evidensbaseret viden fra Entropi Coaching.">
+<meta property="og:url" content="https://entropicoaching.dk/viden.html">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://entropicoaching.dk/IMG_9902.jpg">
 <meta name="twitter:card" content="summary_large_image">
 </head>
-<body style="background:#141410;color:#edeæ2;">
+<body style="background:#141410;color:#edeae2;">
 
 <nav>
   <a href="index.html" class="nav-logo">Entropi<span>.</span></a>
@@ -59,14 +72,14 @@
 
 <div class="page-header">
   <div>
-    <p class="page-eyebrow">Artikler</p>
-    <h1 class="page-h1">Viden om<br><em>styrkeløft.</em></h1>
+    <p class="page-eyebrow">Viden</p>
+    <h1 class="page-h1">Forstå din<br><em>træning.</em></h1>
   </div>
-  <p class="page-intro">Evidensbaserede artikler om de træningsprincipper der driver programmering hos Entropi Coaching.</p>
+  <p class="page-intro">Artikler og gratis programmer bygget på de principper der driver coachingen hos Entropi. Ingen genveje, kun substans.</p>
 </div>
 
 <section class="articles-section">
-  <p class="section-eyebrow reveal">Alle artikler</p>
+  <p class="section-eyebrow reveal">Artikler</p>
   <div class="articles-grid reveal">
     <a href="artikel-volumen.html" class="article-card">
       <div class="article-card-tag">Programmering</div>
@@ -92,6 +105,23 @@
       <div class="article-card-body">Du har løftet de samme kilo i tre uger. Men er det fatigue eller reel stagnation? Svaret bestemmer alt.</div>
       <div class="article-card-meta">2025 · 6 min. læsning</div>
     </a>
+  </div>
+</section>
+
+<section class="programmer-section">
+  <p class="section-eyebrow reveal">Programmer</p>
+  <div class="programmer-teaser reveal">
+    <div class="programmer-teaser-left">
+      <div class="programmer-teaser-tag">Gratis · ingen signup</div>
+      <h2 class="programmer-teaser-title">12 ugers<br><em>styrkeløft-programmer.</em></h2>
+      <p class="programmer-teaser-body">Programmer til begyndere og nysgerrige, designet med samme omhu som individuel coaching. Prøv metoden af, før du søger.</p>
+      <a href="programmer.html" class="btn-primary">Se programmerne</a>
+    </div>
+    <div class="programmer-teaser-right">
+      <div class="programmer-point"><span class="pp-num">01</span><span class="pp-text">Bygget på de samme principper som artiklerne beskriver.</span></div>
+      <div class="programmer-point"><span class="pp-num">02</span><span class="pp-text">Klar struktur og progression fra første uge til stævneklar.</span></div>
+      <div class="programmer-point"><span class="pp-num">03</span><span class="pp-text">Helt gratis. Ingen email, intet forbehold.</span></div>
+    </div>
   </div>
 </section>
 
