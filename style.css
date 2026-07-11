@@ -197,7 +197,7 @@ footer {
 .mobile-cta-bar { display: none; }
 @media (max-width: 900px) {
   nav > .nav-cta { display: none; }
-  body { padding-bottom: 4.5rem; }
+  footer { padding-bottom: calc(6rem + env(safe-area-inset-bottom)); }
   .mobile-cta-bar {
     display: block; position: fixed; left: 0; right: 0; bottom: 0; z-index: 195;
     padding: 0.7rem 1rem calc(0.7rem + env(safe-area-inset-bottom));
