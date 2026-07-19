@@ -81,10 +81,26 @@
   .form-success { display: none; padding: 2.5rem; background: var(--bg3); border: 1px solid var(--border2); text-align: center; }
   .form-success p { font-family: var(--serif); font-size: 1.2rem; font-style: italic; color: var(--ink2); }
 
+  .platform { padding: 5rem 2.5rem; border-bottom: 1px solid var(--border); background: var(--bg); }
+  .platform-inner { display: grid; grid-template-columns: 1fr 1.4fr; gap: 5rem; align-items: start; }
+  .platform-heading { font-family: var(--serif); font-size: clamp(1.8rem, 2.8vw, 2.5rem); font-weight: 400; line-height: 1.1; color: var(--ink); }
+  .platform-heading em { font-style: italic; color: var(--ink3); }
+  .platform-right p { font-size: 0.95rem; color: var(--ink2); line-height: 1.9; margin-bottom: 1.25rem; }
+  .platform-right p:last-child { margin-bottom: 0; }
+
+  .testimonial-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--border); margin-top: 2.5rem; }
+  .t-card { background: var(--bg); padding: 2.5rem 2rem; border: none; margin: 0; display: flex; flex-direction: column; }
+  .t-card p { font-family: var(--serif); font-style: italic; font-size: clamp(1.05rem, 1.5vw, 1.25rem); color: var(--ink2); line-height: 1.7; margin-bottom: 1.5rem; }
+  .t-detail { font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink4); margin-top: auto; }
+
   @media (max-width: 900px) {
     .offers { padding: 4rem 1.5rem; }
     .offers-grid { grid-template-columns: 1fr; }
     .process { padding: 4rem 1.5rem; }
+    .platform { padding: 4rem 1.5rem; }
+    .platform-inner { grid-template-columns: 1fr; gap: 2rem; }
+    .testimonial { padding: 4rem 1.5rem; }
+    .testimonial-grid { grid-template-columns: 1fr; }
     .process-steps { grid-template-columns: 1fr 1fr; }
     .form-section { padding: 4rem 1.5rem; }
     .form-inner { grid-template-columns: 1fr; gap: 3rem; }
@@ -138,7 +154,7 @@
       <div class="offer-title">Coaching</div>
       <div class="offer-price">1.000 kr/md</div>
       <div class="offer-discount" style="font-family:var(--mono);font-size:0.68rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--amber);margin:-0.4rem 0 0.9rem;">Studerende, aktiv tjeneste &amp; veteran: 500 kr/md (−500 kr)</div>
-      <p class="offer-body">Fuld individuel coaching. Programmering leveres via Entropi-appen med ugentlige check-ins og løbende kontakt. Træner vi i samme forening, suppleres med teknisk feedback i person og stævnecoaching på platformen. Alle atleter får adgang til Entropi-portalen — et personligt dashboard med træningsprogram, træningslog og kosttracking.</p>
+      <p class="offer-body">Fuld individuel coaching. Programmering leveres via Entropi-appen med ugentlige check-ins og løbende kontakt. Træner vi i samme forening, suppleres med teknisk feedback i person og stævnecoaching på platformen. Alle atleter får adgang til Entropi-portalen, et personligt dashboard med træningsprogram, træningslog og kosttracking.</p>
       <div class="offer-includes">
         <div class="offer-include">Individuel programmering via Entropi-appen</div>
         <div class="offer-include">Videoanalyse af squat, bænk og dødløft</div>
@@ -158,6 +174,20 @@
         <div class="offer-include">Tilpasset dit niveau og mål</div>
         <div class="offer-include">Peaking, prep eller offseason</div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- PLATFORM -->
+<section class="platform">
+  <div class="platform-inner">
+    <div class="platform-left">
+      <p class="section-eyebrow reveal">Platformen</p>
+      <h2 class="platform-heading reveal">Min egen<br><em>platform.</em></h2>
+    </div>
+    <div class="platform-right reveal">
+      <p>Ti år i Google Sheets viste mig præcis, hvor metoden svigtede. Så byggede jeg min egen app, designet til styrkeløft og til den enkelte atlet.</p>
+      <p>Den er bygget om dit liv, ikke om en skabelon, og den er nem at gå til, når du står med stangen i hånden.</p>
     </div>
   </div>
 </section>
@@ -190,21 +220,20 @@
   </div>
 </section>
 
-<!-- TESTIMONIAL (klar til Regitze-citat) -->
-<!--
+<!-- TESTIMONIALS -->
 <section class="testimonial">
-  <div class="testimonial-inner reveal">
-    <p class="section-eyebrow">Fra platformen</p>
-    <blockquote class="testimonial-quote">
-      <p>"[Regitzes citat her]"</p>
+  <p class="section-eyebrow reveal">Fra atleterne</p>
+  <div class="testimonial-grid reveal">
+    <blockquote class="t-card">
+      <p>"Jeg havde en forventning om at få en, der vidste hvad han taler om. Det fik jeg. Jeg har lært at udføre mine løft korrekt, du siger tingene som de er, og du er virkelig god til at forklare. Jeg er meget glad for at du er min træner."</p>
+      <span class="t-detail">Atlet under Entropi Coaching</span>
     </blockquote>
-    <div class="testimonial-attr">
-      <span class="testimonial-name">Regitze Letting</span>
-      <span class="testimonial-detail">Europamester i dodloft 2025 / -84 kg</span>
-    </div>
+    <blockquote class="t-card">
+      <p>"Et års tid inde havde jeg stadig ikke mærket noget til mine gamle skader. Der vidste jeg, at det var det helt rigtige. Jeg føler mig ikke begrænset. Jeg tror på at alt er muligt, fordi jeg ved, at det virker."</p>
+      <span class="t-detail">Europamester i dødløft, −84 kg</span>
+    </blockquote>
   </div>
 </section>
--->
 
 <!-- FORM -->
 <section class="form-section" id="ansoeg">
