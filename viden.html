@@ -19,6 +19,16 @@
   .article-card-body { font-size: 0.84rem; color: var(--ink3); line-height: 1.75; margin-bottom: 1.25rem; }
   .article-card-meta { font-family: var(--mono); font-size: 0.58rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink4); margin-top: auto; padding-top: 1rem; border-top: 1px solid var(--border); }
 
+  .skip-link { position: fixed; top: 0; left: 1rem; z-index: 300; transform: translateY(-140%); background: var(--amber); color: var(--bg); padding: 0.75rem 1rem; font-family: var(--mono); font-size: 0.7rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; }
+  .skip-link:focus { transform: translateY(0); }
+  .beginner-route { background: var(--bg2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+  .beginner-route-list { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 1px; margin: 0; padding: 0; list-style: none; background: var(--border); }
+  .beginner-route-list li { min-width: 0; background: var(--bg); }
+  .beginner-route-list a { display: flex; min-height: 4.5rem; align-items: center; justify-content: center; padding: 1rem; color: var(--ink); font-family: var(--mono); font-size: 0.68rem; font-weight: 500; letter-spacing: 0.08em; text-align: center; text-decoration: none; text-transform: uppercase; overflow-wrap: anywhere; }
+  .beginner-route-list a:hover, .beginner-route-list a:focus-visible { background: var(--bg2); color: var(--amber); }
+  .beginner-route-coaching { display: flex; justify-content: flex-end; margin-top: 1.5rem; }
+  .beginner-route-coaching a { color: var(--ink3); font-family: var(--mono); font-size: 0.66rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; }
+
   .articles-section { background: var(--bg); border-bottom: 1px solid var(--border); }
   .programmer-section { background: var(--bg2); border-bottom: 1px solid var(--border); }
   .programmer-teaser { display: grid; grid-template-columns: 1.1fr 1fr; border: 1px solid var(--border); background: var(--bg); }
@@ -36,6 +46,9 @@
     .articles-grid { grid-template-columns: 1fr; }
     .programmer-teaser { grid-template-columns: 1fr; }
     .programmer-teaser-left { border-right: none; border-bottom: 1px solid var(--border); }
+    .beginner-route-list { grid-template-columns: 1fr; }
+    .beginner-route-list a { min-height: 3.5rem; justify-content: flex-start; }
+    .beginner-route-coaching { justify-content: flex-start; }
   }
 </style>
 <link rel="canonical" href="https://entropicoaching.dk/viden.html">
@@ -47,6 +60,8 @@
 <meta name="twitter:card" content="summary_large_image">
 </head>
 <body style="background:#141410;color:#edeae2;">
+
+<a class="skip-link" href="#main-content">Viden</a>
 
 <nav>
   <a href="index.html" class="nav-logo">Entropi<span>.</span></a>
@@ -70,6 +85,7 @@
   <a href="coaching.html#ansoeg" class="nav-cta">Ansøg om coaching</a>
 </div>
 
+<main id="main-content">
 <div class="page-header">
   <div>
     <p class="page-eyebrow">Viden</p>
@@ -77,6 +93,19 @@
   </div>
   <p class="page-intro">Artikler og gratis programmer bygget på de principper der driver coachingen hos Entropi. Ingen genveje, kun substans.</p>
 </div>
+
+<section id="start" class="beginner-route" data-beginner-route aria-label="Viden">
+  <ol class="beginner-route-list">
+    <li><a data-beginner-step="program" href="programmer.html">Program</a></li>
+    <li><a data-beginner-step="intensitet" href="artikel-intensitet.html">Intensitet</a></li>
+    <li><a data-beginner-step="volumen" href="artikel-volumen.html">Volumen</a></li>
+    <li><a data-beginner-step="frekvens" href="artikel-frekvens.html">Frekvens</a></li>
+    <li><a data-beginner-step="autoregulation" href="artikel-autoregulering.html">Autoregulering</a></li>
+  </ol>
+  <div class="beginner-route-coaching">
+    <a data-coaching-cta="secondary" href="coaching.html#ansoeg">Coaching</a>
+  </div>
+</section>
 
 <section class="articles-section">
   <p class="section-eyebrow reveal">Artikler</p>
@@ -129,6 +158,7 @@
   <h2 class="cta-heading reveal">Vil du have individuel<br><em>programmering?</em></h2>
   <a href="coaching.html#ansoeg" class="btn-primary reveal">Ansøg om coaching</a>
 </div>
+</main>
 
 <footer>
   <div>
