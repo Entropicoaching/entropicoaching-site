@@ -77,7 +77,10 @@
     transition: opacity 0.15s;
   }
   .btn-submit:hover { opacity: 0.88; }
+  .btn-submit:disabled { cursor: wait; opacity: 0.58; }
   .btn-submit::after { content: '>'; font-family: var(--mono); }
+  .form-error { margin-top: 1px; padding: 1rem 1.25rem; border: 1px solid #8f5148; background: #2d201d; color: #f0d4cf; font-size: 0.82rem; line-height: 1.6; }
+  .form-error[hidden] { display: none; }
   .form-success { display: none; padding: 2.5rem; background: var(--bg3); border: 1px solid var(--border2); text-align: center; }
   .form-success p { font-family: var(--serif); font-size: 1.2rem; font-style: italic; color: var(--ink2); }
 
@@ -245,7 +248,7 @@
       <p class="form-note reveal">Ansøgninger besvares inden for 2-4 hverdage. Jeg er selektiv, ikke alle ansøgninger resulterer i et samarbejde, men alle får et svar.</p>
     </div>
 
-    <div id="form-success" class="form-success">
+    <div id="form-success" class="form-success" role="status" tabindex="-1">
       <p>Tak for din ansøgning. Jeg vender tilbage snarest.</p>
     </div>
 
@@ -340,6 +343,7 @@
       <div class="form-submit">
         <button type="submit" class="btn-submit">Send ansøgning</button>
       </div>
+      <div id="form-error" class="form-error" role="alert" tabindex="-1" hidden>Noget gik galt. Prøv igen eller send en email til coach@entropicoaching.dk</div>
     </form>
   </div>
 </section>
@@ -369,21 +373,39 @@
   // Form submission
   const form = document.getElementById('coaching-form');
   const success = document.getElementById('form-success');
+  const error = document.getElementById('form-error');
+  const submitButton = form.querySelector('button[type="submit"]');
+  const FORM_TIMEOUT_MS = 15000;
+  let isSubmitting = false;
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
+    if (isSubmitting) return;
+    isSubmitting = true;
+    form.setAttribute('aria-busy', 'true');
+    submitButton.disabled = true;
+    error.hidden = true;
     const data = new FormData(form);
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), FORM_TIMEOUT_MS);
     try {
       const res = await fetch(form.action, {
         method: 'POST',
         body: data,
-        headers: { 'Accept': 'application/json' }
+        headers: { 'Accept': 'application/json' },
+        signal: controller.signal
       });
-      if (res.ok) {
-        form.style.display = 'none';
-        success.style.display = 'block';
-      }
+      if (!res.ok) throw new Error('request_failed');
+      form.style.display = 'none';
+      success.style.display = 'block';
+      success.focus();
     } catch (err) {
-      alert('Noget gik galt. Prøv igen eller send en email til coach@entropicoaching.dk');
+      error.hidden = false;
+      error.focus();
+    } finally {
+      clearTimeout(timeoutId);
+      form.removeAttribute('aria-busy');
+      submitButton.disabled = false;
+      isSubmitting = false;
     }
   });
 </script>
