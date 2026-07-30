@@ -27,7 +27,9 @@
   .beginner-route-list a { display: flex; min-height: 4.5rem; align-items: center; justify-content: center; padding: 1rem; color: var(--ink); font-family: var(--mono); font-size: 0.68rem; font-weight: 500; letter-spacing: 0.08em; text-align: center; text-decoration: none; text-transform: uppercase; overflow-wrap: anywhere; }
   .beginner-route-list a:hover, .beginner-route-list a:focus-visible { background: var(--bg2); color: var(--amber); }
   .beginner-route-coaching { display: flex; justify-content: flex-end; margin-top: 1.5rem; }
-  .beginner-route-coaching a { color: var(--ink3); font-family: var(--mono); font-size: 0.66rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; }
+  .beginner-route-coaching a { display: inline-flex; min-width: 44px; min-height: 44px; align-items: center; justify-content: center; padding: 0.75rem 1rem; color: var(--ink3); font-family: var(--mono); font-size: 0.66rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; }
+  .beginner-route-coaching a:hover, .beginner-route-coaching a:focus-visible { color: var(--amber); }
+  .beginner-route-coaching a:focus-visible { outline: 2px solid var(--amber); outline-offset: 2px; }
 
   .articles-section { background: var(--bg); border-bottom: 1px solid var(--border); }
   .programmer-section { background: var(--bg2); border-bottom: 1px solid var(--border); }
