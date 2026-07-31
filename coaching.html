@@ -90,6 +90,10 @@
   .platform-heading em { font-style: italic; color: var(--ink3); }
   .platform-right p { font-size: 0.95rem; color: var(--ink2); line-height: 1.9; margin-bottom: 1.25rem; }
   .platform-right p:last-child { margin-bottom: 0; }
+  .platform-read { display: inline-flex; align-items: center; gap: .65rem; min-height: 44px; margin-top: .5rem; color: var(--amber); font-family: var(--mono); font-size: .65rem; font-weight: 500; letter-spacing: .09em; text-transform: uppercase; text-decoration: none; }
+  .platform-read::after { content: '→'; font-size: 1rem; transition: transform .15s; }
+  .platform-read:hover::after { transform: translateX(3px); }
+  .platform-read:focus-visible { outline: 2px solid var(--amber); outline-offset: 4px; }
 
   .testimonial-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--border); margin-top: 2.5rem; }
   .t-card { background: var(--bg); padding: 2.5rem 2rem; border: none; margin: 0; display: flex; flex-direction: column; }
@@ -191,6 +195,7 @@
     <div class="platform-right reveal">
       <p>Ti år i Google Sheets viste mig præcis, hvor metoden svigtede. Så byggede jeg min egen app, designet til styrkeløft og til den enkelte atlet.</p>
       <p>Den er bygget om dit liv, ikke om en skabelon, og den er nem at gå til, når du står med stangen i hånden.</p>
+      <a class="platform-read" href="artikel-hvad-laver-en-coach.html">Læs hvad der sker mellem dine check-ins</a>
     </div>
   </div>
 </section>

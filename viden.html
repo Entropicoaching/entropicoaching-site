@@ -32,6 +32,16 @@
   .beginner-route-coaching a:focus-visible { outline: 2px solid var(--amber); outline-offset: 2px; }
 
   .articles-section { background: var(--bg); border-bottom: 1px solid var(--border); }
+  .coaching-article { padding: 5rem 2.5rem; background: var(--bg2); border-bottom: 1px solid var(--border); }
+  .coaching-article-inner { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: 4rem; align-items: center; }
+  .coaching-article-title { font-family: var(--serif); font-size: clamp(1.8rem, 2.8vw, 2.5rem); font-weight: 400; line-height: 1.12; color: var(--ink); }
+  .coaching-article-title em { font-style: italic; color: var(--ink3); }
+  .coaching-article-card { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 1.5rem; align-items: center; min-height: 150px; padding: 2rem; border: 1px solid var(--border2); border-left: 2px solid var(--amber); color: var(--ink); text-decoration: none; transition: background .15s, border-color .15s; }
+  .coaching-article-card:hover { background: var(--bg3); border-color: var(--amber-dim); }
+  .coaching-article-card:focus-visible { outline: 2px solid var(--amber); outline-offset: 4px; }
+  .coaching-article-card p { margin: .55rem 0 0; color: var(--ink3); font-size: .86rem; line-height: 1.7; }
+  .coaching-article-card-title { font-family: var(--serif); font-size: 1.35rem; line-height: 1.2; }
+  .coaching-article-arrow { color: var(--amber); font-size: 1.4rem; }
   .programmer-section { background: var(--bg2); border-bottom: 1px solid var(--border); }
   .programmer-teaser { display: grid; grid-template-columns: 1.1fr 1fr; border: 1px solid var(--border); background: var(--bg); }
   .programmer-teaser-left { padding: 3rem; border-right: 1px solid var(--border); }
@@ -51,6 +61,8 @@
     .beginner-route-list { grid-template-columns: 1fr; }
     .beginner-route-list a { min-height: 3.5rem; justify-content: flex-start; }
     .beginner-route-coaching { justify-content: flex-start; }
+    .coaching-article { padding: 4rem 1.5rem; }
+    .coaching-article-inner { grid-template-columns: 1fr; gap: 2rem; }
   }
 </style>
 <link rel="canonical" href="https://entropicoaching.dk/viden.html">
@@ -109,7 +121,7 @@
   </div>
 </section>
 
-<section class="articles-section">
+<section class="articles-section" id="artikler">
   <p class="section-eyebrow reveal">Artikler</p>
   <div class="articles-grid reveal">
     <a href="artikel-volumen.html" class="article-card">
@@ -135,6 +147,25 @@
       <div class="article-card-title">Træthed er ikke<br><em>manglende fremgang.</em></div>
       <div class="article-card-body">Du har løftet de samme kilo i tre uger. Er du bare træt, eller er træningen reelt gået i stå? Det afgør, hvad du bør justere.</div>
       <div class="article-card-meta">2025 · 6 min. læsning</div>
+    </a>
+    <a href="artikel-deload.html" class="article-card">
+      <div class="article-card-tag">Træning</div>
+      <div class="article-card-title">Deload: hvornår giver det<br><em>faktisk mening?</em></div>
+      <div class="article-card-body">Lær at kende forskel på en lettere uge, en fuld pause og en taper — og vurder behovet ud fra mere end én dårlig dag.</div>
+      <div class="article-card-meta">2026 · 9 min. læsning</div>
+    </a>
+  </div>
+</section>
+
+<section class="coaching-article" aria-labelledby="coaching-article-title">
+  <div class="coaching-article-inner">
+    <div>
+      <p class="section-eyebrow reveal">Bag om coaching</p>
+      <h2 class="coaching-article-title reveal" id="coaching-article-title">Programmet er kun<br><em>begyndelsen.</em></h2>
+    </div>
+    <a href="artikel-hvad-laver-en-coach.html" class="coaching-article-card reveal">
+      <span><span class="coaching-article-card-title">Hvad laver en coach, når du ikke ser det?</span><p>Se hvordan video, træningslog, historik og samtale bliver til én beslutning ad gangen.</p></span>
+      <span class="coaching-article-arrow" aria-hidden="true">→</span>
     </a>
   </div>
 </section>
