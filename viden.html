@@ -18,6 +18,11 @@
   .article-card-title em { font-style: italic; color: var(--ink3); }
   .article-card-body { font-size: 0.84rem; color: var(--ink3); line-height: 1.75; margin-bottom: 1.25rem; }
   .article-card-meta { font-family: var(--mono); font-size: 0.58rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink4); margin-top: auto; padding-top: 1rem; border-top: 1px solid var(--border); }
+  .articles-more { display: flex; justify-content: center; padding-top: 1.75rem; }
+  .articles-more a { display: inline-flex; min-height: 44px; align-items: center; color: var(--amber); font-family: var(--mono); font-size: 0.66rem; font-weight: 500; letter-spacing: 0.1em; text-decoration: none; text-transform: uppercase; }
+  .articles-more a::after { margin-left: 0.65rem; content: '→'; font-size: 1rem; }
+  .articles-more a:hover, .articles-more a:focus-visible { color: var(--ink); }
+  .articles-more a:focus-visible { outline: 2px solid var(--amber); outline-offset: 4px; }
 
   .skip-link { position: fixed; top: 0; left: 1rem; z-index: 300; transform: translateY(-140%); background: var(--amber); color: var(--bg); padding: 0.75rem 1rem; font-family: var(--mono); font-size: 0.7rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; }
   .skip-link:focus { transform: translateY(0); }
@@ -157,13 +162,8 @@
       <div class="article-card-body">Du har løftet de samme kilo i tre uger. Er du bare træt, eller er træningen reelt gået i stå? Det afgør, hvad du bør justere.</div>
       <div class="article-card-meta">2025 · 6 min. læsning</div>
     </a>
-    <a href="artikel-deload.html" class="article-card">
-      <div class="article-card-tag">Træning</div>
-      <div class="article-card-title">Deload: hvornår giver det<br><em>faktisk mening?</em></div>
-      <div class="article-card-body">Lær at kende forskel på en lettere uge, en fuld pause og en taper — og vurder behovet ud fra mere end én dårlig dag.</div>
-      <div class="article-card-meta">2026 · 9 min. læsning</div>
-    </a>
   </div>
+  <div class="articles-more reveal"><a href="artikler.html">Se alle artikler</a></div>
 </section>
 
 <section class="coaching-article" aria-labelledby="coaching-article-title">
