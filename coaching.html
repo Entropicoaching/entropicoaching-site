@@ -48,6 +48,9 @@
   .form-intro-heading { font-family: var(--serif); font-size: clamp(1.8rem, 2.8vw, 2.5rem); font-weight: 400; line-height: 1.1; color: var(--ink); margin-bottom: 1.25rem; }
   .form-intro-heading em { font-style: italic; color: var(--ink3); }
   .form-intro-body { font-size: 0.92rem; color: var(--ink2); line-height: 1.85; margin-bottom: 1.5rem; }
+  .form-route { max-width: 460px; margin-bottom: 1.5rem; color: var(--ink3); font-size: 0.84rem; line-height: 1.75; }
+  .form-route a { color: var(--amber); text-decoration: none; border-bottom: 1px solid var(--amber-dim); }
+  .form-route a:hover, .form-route a:focus-visible { color: var(--ink); }
   .form-note { font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.08em; color: var(--ink4); line-height: 1.7; padding-top: 1.25rem; border-top: 1px solid var(--border); }
 
   .form { display: flex; flex-direction: column; gap: 0; }
@@ -77,14 +80,40 @@
     transition: opacity 0.15s;
   }
   .btn-submit:hover { opacity: 0.88; }
+  .btn-submit:disabled { cursor: wait; opacity: 0.58; }
   .btn-submit::after { content: '>'; font-family: var(--mono); }
+  .form-error { margin-top: 1px; padding: 1rem 1.25rem; border: 1px solid #8f5148; background: #2d201d; color: #f0d4cf; font-size: 0.82rem; line-height: 1.6; }
+  .form-error[hidden] { display: none; }
   .form-success { display: none; padding: 2.5rem; background: var(--bg3); border: 1px solid var(--border2); text-align: center; }
   .form-success p { font-family: var(--serif); font-size: 1.2rem; font-style: italic; color: var(--ink2); }
+
+  .platform { padding: 5rem 2.5rem; border-bottom: 1px solid var(--border); background: var(--bg); }
+  .platform-inner { display: grid; grid-template-columns: 0.8fr 1fr 0.72fr; gap: 3rem; align-items: start; }
+  .platform-heading { font-family: var(--serif); font-size: clamp(1.8rem, 2.8vw, 2.5rem); font-weight: 400; line-height: 1.1; color: var(--ink); }
+  .platform-heading em { font-style: italic; color: var(--ink3); }
+  .platform-right p { font-size: 0.95rem; color: var(--ink2); line-height: 1.9; margin-bottom: 1.25rem; }
+  .platform-right p:last-child { margin-bottom: 0; }
+  .platform-read { display: inline-flex; align-items: center; gap: .65rem; min-height: 44px; margin-top: .5rem; color: var(--amber); font-family: var(--mono); font-size: .65rem; font-weight: 500; letter-spacing: .09em; text-transform: uppercase; text-decoration: none; }
+  .platform-read::after { content: '→'; font-size: 1rem; transition: transform .15s; }
+  .platform-read:hover::after { transform: translateX(3px); }
+  .platform-read:focus-visible { outline: 2px solid var(--amber); outline-offset: 4px; }
+  .platform-visual { margin: 0; border: 1px solid var(--border2); background: var(--bg2); }
+  .platform-visual img { width: 100%; display: block; }
+  .platform-visual figcaption { padding: .7rem .9rem; border-top: 1px solid var(--border); color: var(--ink3); font-family: var(--mono); font-size: .56rem; letter-spacing: .08em; text-transform: uppercase; line-height: 1.5; }
+
+  .testimonial-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--border); margin-top: 2.5rem; }
+  .t-card { background: var(--bg); padding: 2.5rem 2rem; border: none; margin: 0; display: flex; flex-direction: column; }
+  .t-card p { font-family: var(--serif); font-style: italic; font-size: clamp(1.05rem, 1.5vw, 1.25rem); color: var(--ink2); line-height: 1.7; margin-bottom: 1.5rem; }
+  .t-detail { font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink4); margin-top: auto; }
 
   @media (max-width: 900px) {
     .offers { padding: 4rem 1.5rem; }
     .offers-grid { grid-template-columns: 1fr; }
     .process { padding: 4rem 1.5rem; }
+    .platform { padding: 4rem 1.5rem; }
+    .platform-inner { grid-template-columns: 1fr; gap: 2rem; }
+    .testimonial { padding: 4rem 1.5rem; }
+    .testimonial-grid { grid-template-columns: 1fr; }
     .process-steps { grid-template-columns: 1fr 1fr; }
     .form-section { padding: 4rem 1.5rem; }
     .form-inner { grid-template-columns: 1fr; gap: 3rem; }
@@ -138,7 +167,7 @@
       <div class="offer-title">Coaching</div>
       <div class="offer-price">1.000 kr/md</div>
       <div class="offer-discount" style="font-family:var(--mono);font-size:0.68rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--amber);margin:-0.4rem 0 0.9rem;">Studerende, aktiv tjeneste &amp; veteran: 500 kr/md (−500 kr)</div>
-      <p class="offer-body">Fuld individuel coaching. Programmering leveres via Entropi-appen med ugentlige check-ins og løbende kontakt. Træner vi i samme forening, suppleres med teknisk feedback i person og stævnecoaching på platformen. Alle atleter får adgang til Entropi-portalen — et personligt dashboard med træningsprogram, træningslog og kosttracking.</p>
+      <p class="offer-body">Fuld individuel coaching. Programmering leveres via Entropi-appen med ugentlige check-ins og løbende kontakt. Træner vi i samme forening, suppleres med teknisk feedback i person og stævnecoaching på platformen. Alle atleter får adgang til Entropi-portalen, et personligt dashboard med træningsprogram, træningslog og kosttracking.</p>
       <div class="offer-includes">
         <div class="offer-include">Individuel programmering via Entropi-appen</div>
         <div class="offer-include">Videoanalyse af squat, bænk og dødløft</div>
@@ -159,6 +188,25 @@
         <div class="offer-include">Peaking, prep eller offseason</div>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- PLATFORM -->
+<section class="platform">
+  <div class="platform-inner">
+    <div class="platform-left">
+      <p class="section-eyebrow reveal">Platformen</p>
+      <h2 class="platform-heading reveal">Min egen<br><em>platform.</em></h2>
+    </div>
+    <div class="platform-right reveal">
+      <p>Ti år i Google Sheets viste mig præcis, hvor metoden svigtede. Så byggede jeg min egen app, designet til styrkeløft og til den enkelte atlet.</p>
+      <p>Den er bygget om dit liv, ikke om en skabelon, og den er nem at gå til, når du står med stangen i hånden.</p>
+      <a class="platform-read" href="artikel-hvad-laver-en-coach.html">Læs hvad der sker mellem dine check-ins</a>
+    </div>
+    <figure class="platform-visual reveal">
+      <img src="assets/entropi-app-anonymiseret.png" alt="Anonymiseret eksempel på Entropi-appens overblik med træningsudvikling, volumen og videocoach" loading="lazy">
+      <figcaption>Entropi-appen · eksempel på overblik, træningsdata og videocoach</figcaption>
+    </figure>
   </div>
 </section>
 
@@ -190,21 +238,20 @@
   </div>
 </section>
 
-<!-- TESTIMONIAL (klar til Regitze-citat) -->
-<!--
+<!-- TESTIMONIALS -->
 <section class="testimonial">
-  <div class="testimonial-inner reveal">
-    <p class="section-eyebrow">Fra platformen</p>
-    <blockquote class="testimonial-quote">
-      <p>"[Regitzes citat her]"</p>
+  <p class="section-eyebrow reveal">Fra atleterne</p>
+  <div class="testimonial-grid reveal">
+    <blockquote class="t-card">
+      <p>"Jeg havde en forventning om at få en, der vidste hvad han taler om. Det fik jeg. Jeg har lært at udføre mine løft korrekt, du siger tingene som de er, og du er virkelig god til at forklare. Jeg er meget glad for at du er min træner."</p>
+      <span class="t-detail">Dansk rekordholder</span>
     </blockquote>
-    <div class="testimonial-attr">
-      <span class="testimonial-name">Regitze Letting</span>
-      <span class="testimonial-detail">Europamester i dodloft 2025 / -84 kg</span>
-    </div>
+    <blockquote class="t-card">
+      <p>"Et års tid inde havde jeg stadig ikke mærket noget til mine gamle skader. Der vidste jeg, at det var det helt rigtige. Jeg føler mig ikke begrænset. Jeg tror på at alt er muligt, fordi jeg ved, at det virker."</p>
+      <span class="t-detail">Europamester i dødløft, −84 kg</span>
+    </blockquote>
   </div>
 </section>
--->
 
 <!-- FORM -->
 <section class="form-section" id="ansoeg">
@@ -213,10 +260,11 @@
       <p class="section-eyebrow reveal">Ansøgning</p>
       <h2 class="form-intro-heading reveal">Fortæl mig<br><em>om dig.</em></h2>
       <p class="form-intro-body reveal">Jo mere du deler, jo bedre kan jeg vurdere om vi er et godt match. Der er ingen rigtige eller forkerte svar. Jeg leder efter løftere der er seriøse om processen, uanset niveau.</p>
+      <p class="form-route reveal">Er du ikke sikker på, om et samarbejde er det rigtige næste skridt? <a href="afklaring.html">Læs først om, hvad en afklaring kan bruges til.</a></p>
       <p class="form-note reveal">Ansøgninger besvares inden for 2-4 hverdage. Jeg er selektiv, ikke alle ansøgninger resulterer i et samarbejde, men alle får et svar.</p>
     </div>
 
-    <div id="form-success" class="form-success">
+    <div id="form-success" class="form-success" role="status" tabindex="-1">
       <p>Tak for din ansøgning. Jeg vender tilbage snarest.</p>
     </div>
 
@@ -311,6 +359,7 @@
       <div class="form-submit">
         <button type="submit" class="btn-submit">Send ansøgning</button>
       </div>
+      <div id="form-error" class="form-error" role="alert" tabindex="-1" hidden>Noget gik galt. Prøv igen eller send en email til coach@entropicoaching.dk</div>
     </form>
   </div>
 </section>
@@ -340,21 +389,39 @@
   // Form submission
   const form = document.getElementById('coaching-form');
   const success = document.getElementById('form-success');
+  const error = document.getElementById('form-error');
+  const submitButton = form.querySelector('button[type="submit"]');
+  const FORM_TIMEOUT_MS = 15000;
+  let isSubmitting = false;
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
+    if (isSubmitting) return;
+    isSubmitting = true;
+    form.setAttribute('aria-busy', 'true');
+    submitButton.disabled = true;
+    error.hidden = true;
     const data = new FormData(form);
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), FORM_TIMEOUT_MS);
     try {
       const res = await fetch(form.action, {
         method: 'POST',
         body: data,
-        headers: { 'Accept': 'application/json' }
+        headers: { 'Accept': 'application/json' },
+        signal: controller.signal
       });
-      if (res.ok) {
-        form.style.display = 'none';
-        success.style.display = 'block';
-      }
+      if (!res.ok) throw new Error('request_failed');
+      form.style.display = 'none';
+      success.style.display = 'block';
+      success.focus();
     } catch (err) {
-      alert('Noget gik galt. Prøv igen eller send en email til coach@entropicoaching.dk');
+      error.hidden = false;
+      error.focus();
+    } finally {
+      clearTimeout(timeoutId);
+      form.removeAttribute('aria-busy');
+      submitButton.disabled = false;
+      isSubmitting = false;
     }
   });
 </script>

@@ -4,6 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Fatigue er ikke manglende fremgang | Entropi Coaching</title>
+<meta name="description" content="Du har løftet de samme kilo i tre uger. Er det fatigue eller reel stagnation? Forstå forskellen, og hvordan autoregulering hjælper dig videre.">
+<meta property="og:title" content="Fatigue er ikke manglende fremgang | Entropi Coaching">
+<meta property="og:description" content="Du har løftet de samme kilo i tre uger. Er det fatigue eller reel stagnation? Forstå forskellen, og hvordan autoregulering hjælper dig videre.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=IBM+Plex+Sans:wght@300;400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
@@ -168,6 +171,8 @@
     color: var(--ink);
     margin-bottom: 0.2rem;
   }
+  .author-name a { color: inherit; text-decoration: none; }
+  .author-name a:hover, .author-name a:focus-visible { color: var(--amber); }
   .author-bio {
     font-size: 0.82rem;
     color: var(--ink3);
@@ -184,6 +189,28 @@
     color: var(--amber);
     flex-shrink: 0;
   }
+
+  /* NEXT STEP */
+  .article-next {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 1rem;
+    align-items: center;
+    margin-top: 2rem;
+    padding: 1.15rem 1.25rem;
+    background: var(--bg3);
+    border: 1px solid var(--border2);
+    border-left: 2px solid var(--amber);
+    color: var(--ink);
+    text-decoration: none;
+    transition: background 0.15s, border-color 0.15s;
+  }
+  .article-next:hover { background: var(--bg2); border-color: var(--amber-dim); }
+  .article-next:focus-visible { outline: 2px solid var(--amber); outline-offset: 4px; }
+  .article-next-kicker { display: block; margin-bottom: 0.3rem; font-family: var(--mono); font-size: 0.58rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--amber); }
+  .article-next-title { display: block; margin-bottom: 0.2rem; font-family: var(--serif); font-size: 1.25rem; line-height: 1.2; color: var(--ink); }
+  .article-next-body { display: block; font-size: 0.8rem; line-height: 1.55; color: var(--ink3); }
+  .article-next-arrow { font-size: 1.35rem; color: var(--amber); }
 
   /* BACK LINK */
   .back-link {
@@ -223,15 +250,18 @@
 </style>
 <link rel="canonical" href="https://entropicoaching.dk/artikel-autoregulering.html">
 <meta property="og:url" content="https://entropicoaching.dk/artikel-autoregulering.html">
-<meta property="og:type" content="website">
+<meta property="og:type" content="article">
 <meta property="og:image" content="https://entropicoaching.dk/IMG_9902.jpg">
 <meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"Fatigue er ikke manglende fremgang","description":"Du har løftet de samme kilo i tre uger. Er det fatigue eller reel stagnation? Forstå forskellen, og hvordan autoregulering hjælper dig videre.","datePublished":"2025-04-03","dateModified":"2025-04-03","mainEntityOfPage":"https://entropicoaching.dk/artikel-autoregulering.html","image":"https://entropicoaching.dk/IMG_9902.jpg","author":{"@type":"Person","name":"Marc Schlichting","url":"https://entropicoaching.dk/om.html"},"publisher":{"@type":"Organization","name":"Entropi Coaching","url":"https://entropicoaching.dk/"}}
+</script>
 </head>
 <body style="background:#141410;color:#edeae2;">
 
 <nav>
   <a href="index.html" class="nav-logo">Entropi<span>.</span></a>
-  <a href="artikler.html" class="nav-back">< Artikler</a>
+  <a href="viden.html#artikler" class="nav-back">< Artikler</a>
 </nav>
 
 <div class="article-wrap">
@@ -310,12 +340,17 @@
     <div class="author-dot">M</div>
     <div>
       <div class="author-label">Forfatter</div>
-      <div class="author-name">Marc Schlichting</div>
+      <div class="author-name"><a href="om.html">Marc Schlichting</a></div>
       <div class="author-bio">Stifter af Entropi Coaching. Styrkeløft-coach med 8+ års erfaring.</div>
     </div>
   </div>
 
-  <a href="artikler.html" class="back-link">Tilbage til ressourcer</a>
+  <a href="programmer.html" class="article-next">
+    <span><span class="article-next-kicker">Brug det i praksis</span><span class="article-next-title">Gratis programmer</span><span class="article-next-body">Vælg et 12-ugers program og kom i gang.</span></span>
+    <span class="article-next-arrow" aria-hidden="true">→</span>
+  </a>
+
+  <a href="viden.html#artikler" class="back-link">Tilbage til ressourcer</a>
 
 </div>
 

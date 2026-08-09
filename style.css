@@ -21,7 +21,7 @@
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; overflow-x: hidden; max-width: 100%; }
 body {
   background: var(--bg); color: var(--ink);
   font-family: var(--sans); font-weight: 400;
@@ -189,7 +189,7 @@ footer {
 
   footer { grid-template-columns: 1fr; text-align: center; }
   .footer-contact { text-align: center; }
-  .footer-links { justify-content: center; }
+  .footer-links { justify-content: center; flex-wrap: wrap; gap: 0.85rem 1.4rem; }
 }
 
 
@@ -197,7 +197,7 @@ footer {
 .mobile-cta-bar { display: none; }
 @media (max-width: 900px) {
   nav > .nav-cta { display: none; }
-  body { padding-bottom: 4.5rem; }
+  footer { padding-bottom: calc(6rem + env(safe-area-inset-bottom)); }
   .mobile-cta-bar {
     display: block; position: fixed; left: 0; right: 0; bottom: 0; z-index: 195;
     padding: 0.7rem 1rem calc(0.7rem + env(safe-area-inset-bottom));

@@ -4,9 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Resultater | Entropi Coaching</title>
-<meta name="description" content="Resultater fra atleter coached under Entropi Coaching: Europamester i dødløft 2025, nationale titler og dokumenterede præstationsfremgange.">
+<meta name="description" content="Resultater fra atleter coached under Entropi Coaching: guld i dødløft ved EM 2026 i Malta, nationale titler og dokumenterede præstationsfremgange.">
 <meta property="og:title" content="Resultater | Entropi Coaching">
-<meta property="og:description" content="Resultater fra atleter coached under Entropi Coaching: Europamester i dødløft 2025, nationale titler og dokumenterede præstationsfremgange.">
+<meta property="og:description" content="Resultater fra atleter coached under Entropi Coaching: guld i dødløft ved EM 2026 i Malta, nationale titler og dokumenterede præstationsfremgange.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=IBM+Plex+Sans:wght@300;400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -14,11 +14,11 @@
 <style>
   /* ---- RESULTATER-SPECIFIC ---- */
   .featured { background: var(--bg2); border-bottom: 1px solid var(--border); }
-  .featured-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border: 1px solid var(--border2); }
-  .featured-img-wrap { position: relative; overflow: hidden; }
-  .featured-img { width: 100%; height: 100%; object-fit: cover; object-position: center 20%; display: block; filter: brightness(0.82); }
-  .featured-img-overlay { position: absolute; inset: 0; background: linear-gradient(to right, transparent 60%, var(--bg2) 100%); }
-  .featured-content { padding: 3rem; }
+  .featured-inner { display: grid; grid-template-columns: minmax(0, 1fr) 13rem; gap: 2rem; border: 1px solid var(--border2); }
+  .featured-content { max-width: 58rem; padding: 3rem; }
+  .featured-media { margin: 1.5rem 1.5rem 1.5rem 0; align-self: center; }
+  .featured-media img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: 48% center; display: block; filter: brightness(0.88); border: 1px solid var(--border2); }
+  .featured-media figcaption { margin-top: .6rem; color: var(--ink4); font-family: var(--mono); font-size: .52rem; letter-spacing: .08em; line-height: 1.5; text-transform: uppercase; }
   .featured-tag { font-family: var(--mono); font-size: 0.6rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--amber); margin-bottom: 1.5rem; }
   .featured-result { font-family: var(--serif); font-size: clamp(2.2rem, 4vw, 3.5rem); font-weight: 400; line-height: 1.05; color: var(--ink); margin-bottom: 0.5rem; }
   .featured-result em { font-style: italic; color: var(--ink3); }
@@ -33,7 +33,7 @@
   .press-ref:hover { color: var(--ink3); }
 
   .all-results { background: var(--bg); border-bottom: 1px solid var(--border); }
-  .results-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--border); }
+  .results-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; background: var(--border); }
   .result-card { background: var(--bg); padding: 2rem 1.75rem; border-top: 2px solid transparent; transition: border-color 0.2s, background 0.2s; }
   .result-card:hover { border-top-color: var(--amber); background: var(--bg2); }
   .result-tag { font-family: var(--mono); font-size: 0.58rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--amber); margin-bottom: 1rem; }
@@ -55,8 +55,9 @@
   .marc-caption { padding: 0.6rem 1rem; background: var(--bg3); border: 1px solid var(--border); border-top: none; font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink3); }
 
   @media (max-width: 900px) {
-    .featured-inner { grid-template-columns: 1fr; }
-    .featured-img-wrap { height: 50vw; }
+    .featured-inner { grid-template-columns: 1fr; gap: 0; }
+    .featured-content { padding: 2rem 1.5rem 1rem; }
+    .featured-media { width: min(12rem, calc(100% - 3rem)); margin: 0 1.5rem 2rem; }
     .results-grid { grid-template-columns: 1fr; }
     .marc-inner { grid-template-columns: 1fr; gap: 3rem; }
   }
@@ -64,7 +65,7 @@
 <link rel="canonical" href="https://entropicoaching.dk/resultater.html">
 <meta property="og:url" content="https://entropicoaching.dk/resultater.html">
 <meta property="og:type" content="website">
-<meta property="og:image" content="https://entropicoaching.dk/IMG_9902.jpg">
+<meta property="og:image" content="https://entropicoaching.dk/assets/regitze-em-2026-guld.jpg">
 <meta name="twitter:card" content="summary_large_image">
 </head>
 <body style="background:#141410;color:#edeae2;">
@@ -103,44 +104,49 @@
 <section class="featured">
   <p class="section-eyebrow reveal">Seneste resultat</p>
   <div class="featured-inner reveal">
-    <div class="featured-img-wrap">
-      <img src="IMG_9932.PNG" alt="EPF Europamesterskab 2025" class="featured-img" loading="lazy">
-      <div class="featured-img-overlay"></div>
-    </div>
     <div class="featured-content">
-      <div class="featured-tag">🇩🇰 EPF Europamesterskab · 2025</div>
-      <div class="featured-result">Europamester<br><em>i dødløft.</em></div>
+      <div class="featured-tag">EM · Malta · 2026</div>
+      <div class="featured-result">Guld i<br><em>dødløft.</em></div>
       <div class="featured-class">Kvinder · -84 kg · Åben klasse</div>
-      <p class="featured-body">Guldmedalje ved EPF Europamesterskabet i dødløft. Atletens præstation placerede hende som historisk stærkeste i sin vægtklasse i Danmark målt på kvinders IPF point, og stærkeste overall på tværs af alle klasser. Bygget på systematisk teknisk arbejde, datadrevet programmering og en konkurrencestrategi uden gætteri.</p>
+      <p class="featured-body">En Entropi-atlet tog guld i dødløft med 240 kg ved EM 2026 i Malta. Resultatet er bygget på systematisk teknisk arbejde, datadrevet programmering og en konkurrencestrategi uden gætteri.</p>
       <div class="featured-stats">
-        <div class="f-stat"><div class="f-stat-num">🥇</div><div class="f-stat-label">Europamester</div></div>
-        <div class="f-stat"><div class="f-stat-num">DK #1</div><div class="f-stat-label">IPF point kvinder</div></div>
-        <div class="f-stat"><div class="f-stat-num">2025</div><div class="f-stat-label">Sæson</div></div>
+        <div class="f-stat"><div class="f-stat-num">🥇</div><div class="f-stat-label">Guld i dødløft</div></div>
+        <div class="f-stat"><div class="f-stat-num">240 kg</div><div class="f-stat-label">Dødløft</div></div>
+        <div class="f-stat"><div class="f-stat-num">2026</div><div class="f-stat-label">EM · Malta</div></div>
       </div>
-      <a href="https://www.sn.dk/art6540043/roskilde-kommune/lokal-sport/em-medaljer-til-unge-styrkeloeftere/" target="_blank" rel="noopener" class="press-ref">Sjællandske Nyheder</a>
     </div>
+    <figure class="featured-media">
+      <img src="assets/regitze-em-2026-medalje.jpg" alt="Medaljeoverrækkelse ved EM 2026 i Malta" loading="lazy">
+      <figcaption>EM 2026 · Malta</figcaption>
+    </figure>
   </div>
 </section>
 <section class="all-results">
-  <p class="section-eyebrow reveal">Alle resultater</p>
+  <p class="section-eyebrow reveal">Resultatarkiv</p>
   <div class="results-grid reveal">
     <div class="result-card">
-      <div class="result-tag">EPF · Europamesterskab 2025</div>
-      <div class="result-title">Europamester</div>
+      <div class="result-tag">EPF · EM 2026 · Malta</div>
+      <div class="result-title">EM-guld i dødløft</div>
       <div class="result-class">Kvinder · -84 kg · Åben</div>
-      <p class="result-body">Guldmedalje i dødløft. Historisk stærkeste i klassen i Danmark på kvinders IPF point.</p>
+      <p class="result-body">Guldmedalje i dødløft med 240 kg ved EM i Malta.</p>
     </div>
     <div class="result-card">
-      <div class="result-tag">DSF Nationale · 2021–2023</div>
-      <div class="result-title">Sub-junior #1</div>
-      <div class="result-class">Nationalt · Sub-junior</div>
-      <p class="result-body">Top-1 placering nationalt med flere nationale rekorder sat under samarbejdet. Fortsat stærk udvikling på junior-niveau.</p>
+      <div class="result-tag">DM · 2024</div>
+      <div class="result-title">Dansk sub-juniormester</div>
+      <div class="result-class">Sub-junior</div>
+      <p class="result-body">Dansk mester og rekordholder under Entropi Coaching.</p>
     </div>
     <div class="result-card">
-      <div class="result-tag">Løbende · 2019–nu</div>
-      <div class="result-title">Nationale topatleter</div>
-      <div class="result-class">Diverse klasser</div>
-      <p class="result-body">Coaching af atleter på tværs af klasser og niveauer med dokumenterede præstationsfremgange ved nationale stævner.</p>
+      <div class="result-tag">SM · 2021</div>
+      <div class="result-title">Sølv i bænkpres</div>
+      <div class="result-class">M1</div>
+      <p class="result-body">Sølv ved SM i bænkpres under Entropi Coaching.</p>
+    </div>
+    <div class="result-card">
+      <div class="result-tag">DM · M2</div>
+      <div class="result-title">Guld i bænkpres</div>
+      <div class="result-class">M2</div>
+      <p class="result-body">DM-guld i bænkpres under Entropi Coaching.</p>
     </div>
   </div>
 </section>
