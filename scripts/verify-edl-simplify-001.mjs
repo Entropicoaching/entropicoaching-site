@@ -18,15 +18,33 @@ const secondaryDemos = [
   'automation-studie.html',
 ];
 
+const labMarkup = lab.slice(0, lab.indexOf('<script>'));
+const forbiddenCopy = [
+  'GODKEND FØR PUBLICERING',
+  'tilgængelige controls',
+  'analysing customer path',
+  'build small, useful things',
+  'Showcase, ikke salgstrick',
+];
+
+for (const fragment of forbiddenCopy) {
+  assert.ok(!page.includes(fragment), `intern eller kladdepræget tekst må ikke være synlig: ${fragment}`);
+}
+assert.doesNotMatch(page, /class="approval"|GODKEND\s+FØR\s+PUBLICERING/i, 'intern publiceringsnote må ikke være en del af siden');
+assert.match(page, /Derfor viser siden også, hvordan vi arbejder i praksis: med tydelige valg og funktioner, der rent faktisk virker\./);
+
 assert.equal(count(page, /href="lab\.html"/g), 1, 'forsiden skal have præcis én Lab-indgang');
 assert.match(page, /<section class="section lab" id="lab"[^>]*aria-labelledby="lab-title"/);
 assert.match(page, /<h2 id="lab-title">/);
 
 for (const destination of secondaryDemos) {
   assert.doesNotMatch(page, new RegExp(`href="${destination.replace('.', '\\.')}"`), `${destination} må ikke ligge på første niveau`);
-  assert.ok(lab.includes(`href="${destination}"`) || overview.includes(`href="${destination}"`), `${destination} skal være bevaret i Lab/oversigt`);
+  assert.ok(labMarkup.includes(`href="${destination}"`) || overview.includes(`href="${destination}"`), `${destination} skal være tilgængelig uden at afhænge af Lab-JavaScript`);
   assert.ok(existsSync(resolve(root, destination)), `${destination} skal stadig eksistere`);
 }
+assert.equal(count(labMarkup, /class="lab-directory-grid"/g), 1, 'Lab skal have ét statisk produktbibliotek');
+assert.equal(count(labMarkup.match(/<div class="lab-directory-grid">([\s\S]*?)<\/div>/)?.[1] ?? '', /<a href=/g), 9, 'Lab-biblioteket skal have ni destinationer');
+assert.doesNotMatch(lab, /closest\('\.journey'\)/, 'Lab-destinationer må ikke afhænge af flytning fra midlertidige journey-elementer');
 
 assert.match(page, /class="nav-toggle"[^>]*aria-expanded="false"[^>]*aria-controls="primary-menu"/);
 assert.match(page, /<ul class="nav-links" id="primary-menu">/);
@@ -58,4 +76,4 @@ for (const href of localLinks) {
 }
 
 assert.doesNotMatch(page, /id="(?:start-her|systemer|egne-produkter)"/);
-console.log('VERIFIER GRØN: rolig forside, én Lab-indgang, mobilnavigation, situationsdemo og kontaktvej er bevaret.');
+console.log('VERIFIER GRØN: naturlig copy, ingen intern note, ni statiske Lab-destinationer, mobilnavigation, situationsdemo og kontaktvej er bevaret.');
