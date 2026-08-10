@@ -31,7 +31,8 @@ for (const fragment of forbiddenCopy) {
   assert.ok(!page.includes(fragment), `intern eller kladdepræget tekst må ikke være synlig: ${fragment}`);
 }
 assert.doesNotMatch(page, /class="approval"|GODKEND\s+FØR\s+PUBLICERING/i, 'intern publiceringsnote må ikke være en del af siden');
-assert.match(page, /Derfor viser siden også, hvordan vi arbejder i praksis: med tydelige valg og funktioner, der rent faktisk virker\./);
+assert.match(page, /Den eneste rigtige case her/, 'STEDET-casen skal fremstå som den eneste rigtige case på forsiden');
+assert.match(page, /<section class="section" id="case" aria-labelledby="case-title">/, 'case-sektionen skal fortsat findes med sit id');
 
 assert.equal(count(page, /href="lab\.html"/g), 1, 'forsiden skal have præcis én Lab-indgang');
 assert.match(page, /<section class="section lab" id="lab"[^>]*aria-labelledby="lab-title"/);
@@ -66,7 +67,8 @@ const mainEndIndex = page.indexOf('</main>');
 assert.ok(labIndex > 0 && contactIndex > labIndex, 'kontakt skal følge efter Lab');
 assert.ok(mainEndIndex > contactIndex, 'kontakt skal være i hovedindholdet');
 assert.equal(page.slice(contactIndex, mainEndIndex).match(/<section\b/g)?.length ?? 0, 0, 'kontakt skal være sidste sektion');
-assert.match(page, /href="mailto:kontakt@entropidigital\.dk\?subject=Digital%20l%C3%B8sning%20%E2%80%93%20afklaring"/);
+assert.match(page, /<a class="button" href="kontakt\.html">Udfyld kontaktformular →<\/a>/, 'kontaktpanelet skal pege på den rigtige kontaktformular');
+assert.match(page, /href="mailto:kontakt@entropidigital\.dk">kontakt@entropidigital\.dk<\/a>/, 'mailadressen skal fortsat være tilgængelig som sekundær kontaktvej');
 
 const localLinks = [...page.matchAll(/href="([^"#][^"]*)"/g)]
   .map((match) => match[1])

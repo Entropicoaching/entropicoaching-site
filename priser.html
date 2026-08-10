@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Priser · Hjemmeside og bookingsystem til små virksomheder | Entropi</title>
+  <meta name="description" content="Priser på landingsside, hjemmeside og hjemmeside med flow til små virksomheder. Alle priser ekskl. moms. Se også driftsaftaler for hosting og løbende ændringer.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://entropidigital.dk/priser.html">
+  <meta property="og:locale" content="da_DK">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Entropi Digital">
+  <meta property="og:title" content="Priser · Hjemmeside og bookingsystem til små virksomheder">
+  <meta property="og:description" content="Priser på landingsside, hjemmeside og hjemmeside med flow til små virksomheder. Alle priser ekskl. moms.">
+  <meta property="og:url" content="https://entropidigital.dk/priser.html">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Priser · Hjemmeside og bookingsystem til små virksomheder">
+  <meta name="twitter:description" content="Priser på landingsside, hjemmeside og hjemmeside med flow til små virksomheder. Alle priser ekskl. moms.">
+  <style>
+    :root { --night:#080a13; --panel:#111527; --line:#2d3555; --ink:#f5f4f0; --muted:#9ca7c6; --aqua:#7effd4; --violet:#9d7bff; --coral:#ff947c; --mono: ui-monospace, SFMono-Regular, Consolas, monospace; }
+    * { box-sizing:border-box; } html { scroll-behavior:smooth; overflow-x:hidden; } body { margin:0; color:var(--ink); background:var(--night); font-family:Inter,system-ui,sans-serif; overflow-x:hidden; }
+    body:before { content:""; position:fixed; inset:0; pointer-events:none; opacity:.32; background:linear-gradient(90deg,transparent 49.85%,#ffffff09 50%,transparent 50.15%),linear-gradient(0deg,transparent 49.85%,#ffffff07 50%,transparent 50.15%); background-size:48px 48px; mask-image:linear-gradient(#0008,transparent 70%); }
+    a { color:inherit; } a:focus-visible,button:focus-visible { outline:3px solid var(--aqua); outline-offset:3px; }
+    .shell { max-width:1280px; margin:auto; padding:0 2rem; }
+    nav { height:76px; display:flex; align-items:center; justify-content:space-between; border-bottom:1px solid #ffffff12; }
+    .brand { font-family:var(--mono); font-size:.82rem; letter-spacing:.08em; text-decoration:none; text-transform:uppercase; } .brand b { color:var(--aqua); }
+    .back { color:var(--muted); font-size:.85rem; text-decoration:none; } .back:hover { color:var(--aqua); }
+    .tag { font: .65rem var(--mono); text-transform:uppercase; letter-spacing:.1em; color:var(--aqua); }
+    main { padding:4.5rem 0 5rem; }
+    header.priser-head { display:grid; grid-template-columns:1.2fr .8fr; gap:3rem; align-items:end; margin-bottom:2.5rem; }
+    h1 { font-size:clamp(2.8rem,6vw,5.4rem); line-height:.92; letter-spacing:-.06em; margin:.7rem 0 1.2rem; }
+    .intro { color:var(--muted); line-height:1.75; font-size:1.02rem; max-width:34rem; }
+    .moms-note { padding:1.1rem 1.25rem; border:1px solid var(--aqua); border-radius:10px; background:#0d1f1acc; color:#d8fff0; font:.78rem/1.7 var(--mono); }
+    .moms-note b { color:var(--aqua); }
+    .section { padding:3.5rem 0; border-top:1px solid #ffffff12; }
+    .section-head { margin-bottom:1.8rem; }
+    .section-head h2 { font-size:clamp(1.7rem,3.2vw,2.6rem); letter-spacing:-.045em; line-height:1; margin:.4rem 0 0; }
+    .section-head p { max-width:36rem; margin:.6rem 0 0; color:var(--muted); line-height:1.65; }
+    .price-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:1rem; }
+    .price-card { border:1px solid var(--line); border-radius:12px; padding:1.4rem; background:linear-gradient(160deg,#12162a,#0c0f1d); display:flex; flex-direction:column; }
+    .price-card .num { font: .62rem var(--mono); color:var(--aqua); letter-spacing:.08em; }
+    .price-card h3 { font-size:1.2rem; letter-spacing:-.03em; margin:.9rem 0 .4rem; }
+    .price-card .price { font-size:1.7rem; letter-spacing:-.03em; margin:0 0 .8rem; }
+    .price-card .price small { font: .6rem var(--mono); color:var(--muted); letter-spacing:.04em; }
+    .price-card p { color:var(--muted); font-size:.85rem; line-height:1.65; margin:0; flex:1; }
+    .price-card .vat { margin-top:.9rem; font: .62rem var(--mono); color:var(--coral); letter-spacing:.05em; text-transform:uppercase; }
+    .drift-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:1rem; }
+    .drift-card { border:1px solid var(--line); border-radius:12px; padding:1.4rem; background:linear-gradient(160deg,#131a2c,#0b0e1a); }
+    .drift-card .num { font: .62rem var(--mono); color:var(--violet); letter-spacing:.08em; }
+    .drift-card h3 { font-size:1.25rem; letter-spacing:-.03em; margin:.9rem 0 .4rem; }
+    .drift-card .price { font-size:1.6rem; letter-spacing:-.03em; margin:0 0 .8rem; }
+    .drift-card .price small { font: .6rem var(--mono); color:var(--muted); }
+    .drift-card ul { margin:.6rem 0 0; padding-left:1.1rem; color:var(--muted); font-size:.85rem; line-height:1.75; }
+    .terms { border:1px solid var(--line); border-radius:12px; padding:1.5rem; background:#0d1020; }
+    .terms ul { margin:0; padding-left:1.1rem; color:var(--muted); font-size:.9rem; line-height:1.9; }
+    .terms li b { color:var(--ink); font-weight:500; }
+    .cta-panel { padding:2rem; border:1px solid var(--aqua); border-radius:12px; background:linear-gradient(135deg,#112d31,#101426); display:flex; justify-content:space-between; align-items:center; gap:2rem; }
+    .cta-panel h2 { margin:.5rem 0 0; font-size:clamp(1.7rem,3.4vw,2.6rem); letter-spacing:-.05em; line-height:1; }
+    .cta-panel p { margin:.7rem 0 0; max-width:34rem; color:var(--muted); line-height:1.65; }
+    .button { display:inline-block; flex:none; margin:0; padding:.85rem 1rem; border:1px solid var(--aqua); color:var(--aqua); text-decoration:none; border-radius:5px; font:.72rem var(--mono); white-space:nowrap; }
+    .button:hover { background:var(--aqua); color:#080a13; }
+    .footer { padding:2rem 0 3rem; border-top:1px solid #ffffff12; color:var(--muted); font:.65rem var(--mono); display:flex; justify-content:space-between; }
+    @media(max-width:900px){ .price-grid { grid-template-columns:1fr 1fr; } .drift-grid { grid-template-columns:1fr; } }
+    @media(max-width:800px){ .shell{padding:0 1.1rem} header.priser-head{grid-template-columns:1fr;gap:1.4rem} .cta-panel{display:block} .cta-panel .button{margin-top:1.2rem} .footer{display:block} .footer span{display:block;margin-bottom:.6rem} }
+    @media(max-width:540px){ .price-grid { grid-template-columns:1fr; } }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <nav aria-label="Priser navigation"><a class="brand" href="digitale-loesninger.html">Entropi <b>/ Digitale Løsninger</b></a><a class="back" href="digitale-loesninger.html">← Til hovedsiden</a></nav>
+    <main>
+      <header class="priser-head">
+        <div><p class="tag">Priser / ekskl. moms</p><h1>Klar besked,<br>før vi går i gang.</h1><p class="intro">Priser på hjemmeside, bookingsystem og digitale løsninger til små virksomheder. Ingen overraskelser — hvert projekt tager udgangspunkt i priserne herunder.</p></div>
+        <div class="moms-note"><b>Alle priser er ekskl. moms.</b><br>Erhvervskunder får momsen retur, så prisen ekskl. moms er den reelle pris for jer. Momsen lægges på ved fakturering.</div>
+      </header>
+
+      <section class="section" id="projekter" aria-labelledby="projekter-title">
+        <div class="section-head"><p class="tag">Engangsopgaver</p><h2 id="projekter-title">Hjemmeside eller landingsside — bygget til jer.</h2><p>Fire pakker der dækker de fleste behov, fra en enkelt side til et flow med booking eller betaling.</p></div>
+        <div class="price-grid">
+          <article class="price-card"><span class="num">01 / LANDINGSSIDE</span><h3>Landingsside</h3><p class="price">7.500 <small>KR.</small></p><p>Én side der forklarer, hvad virksomheden laver, og hvordan man kommer i kontakt. Mobilvenlig, kontaktformular og sat op på jeres domæne.</p><span class="vat">+ moms</span></article>
+          <article class="price-card"><span class="num">02 / HJEMMESIDE</span><h3>Hjemmeside</h3><p class="price">18.000 <small>KR.</small></p><p>4-6 sider med indhold i samarbejde med jer. Mobilvenlig, SEO-grundopsætning, kontaktformular og registrering hos Google.</p><span class="vat">+ moms</span></article>
+          <article class="price-card"><span class="num">03 / MED FLOW</span><h3>Hjemmeside med flow</h3><p class="price">32.000 <small>KR.</small></p><p>Alt i Hjemmeside, plus ét sammenhængende flow: booking, tidsbestilling, indtagsformular eller betaling — integreret med det, I allerede bruger.</p><span class="vat">+ moms</span></article>
+          <article class="price-card"><span class="num">04 / AUTOMATION</span><h3>Automation og interne værktøjer</h3><p class="price">Efter aftale</p><p>600 kr. i timen med et aftalt loft, så I altid kender rammen på forhånd, før arbejdet går i gang.</p><span class="vat">+ moms</span></article>
+        </div>
+      </section>
+
+      <section class="section" id="drift" aria-labelledby="drift-title">
+        <div class="section-head"><p class="tag">Driftsaftale / pr. måned</p><h2 id="drift-title">Så virker det, efter det er leveret.</h2><p>To niveauer for hosting, sikkerhed og løbende ændringer. Vælges til, når hjemmesiden er klar.</p></div>
+        <div class="drift-grid">
+          <article class="drift-card"><span class="num">BASIS</span><h3>Basis</h3><p class="price">249 <small>KR./MD. + MOMS</small></p><ul><li>Hosting, SSL og backup</li><li>Sikkerhedsopdateringer</li><li>Mindre tekstrettelser op til 15 min.</li></ul></article>
+          <article class="drift-card"><span class="num">PLUS</span><h3>Plus</h3><p class="price">449 <small>KR./MD. + MOMS</small></p><ul><li>Alt i Basis</li><li>Én times ændringer om måneden</li><li>Kvartalsoverblik over besøgstal</li></ul></article>
+        </div>
+      </section>
+
+      <section class="section" id="betaling" aria-labelledby="betaling-title">
+        <div class="section-head"><p class="tag">Betalingsbetingelser</p><h2 id="betaling-title">Sådan faktureres det.</h2></div>
+        <div class="terms"><ul>
+          <li><b>Engangsopgaver:</b> 50 % ved opstart, 50 % ved levering. Betalingsfrist 8 dage netto.</li>
+          <li><b>Driftsaftale:</b> Faktureres kvartalsvis eller årligt forud.</li>
+        </ul></div>
+      </section>
+
+      <section class="section" id="kontakt-cta" aria-labelledby="kontakt-cta-title">
+        <div class="cta-panel"><div><p class="tag">Næste skridt</p><h2 id="kontakt-cta-title">Ikke sikker på, hvilken pakke der passer?</h2><p>Skriv kort om virksomheden og det, der skal blive lettere — så finder vi den rigtige løsning sammen.</p></div><a class="button" href="kontakt.html">Udfyld kontaktformular →</a></div>
+      </section>
+    </main>
+    <footer class="footer"><span>Entropi – Digitale Løsninger</span><span>Priser ekskl. moms · gældende for nye aftaler</span></footer>
+  </div>
+</body>
+</html>
