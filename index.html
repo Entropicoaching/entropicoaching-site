@@ -11,7 +11,7 @@
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Entropi Digital">
   <meta property="og:title" content="Det praktiske kan føles magisk · Entropi Digital">
-  <meta property="og:description" content="Klare hjemmesider, bedre veje til henvendelse og enkle automatiseringer til små virksomheder.">
+  <meta property="og:description" content="Klare hjemmesider og n8n-automatiseringsflows, der fjerner gentagne manuelle opgaver.">
   <meta property="og:url" content="https://entropidigital.dk/">
   <meta name="twitter:card" content="summary">
   <meta name="theme-color" content="#070912">
@@ -24,7 +24,7 @@
     "name": "Entropi Digital",
     "url": "https://entropidigital.dk/",
     "email": "kontakt@entropidigital.dk",
-    "description": "Hjemmesider og enkle digitale flows til selvstændige og små virksomheder.",
+    "description": "Hjemmesider og n8n-automatiseringsflows til selvstændige og små virksomheder.",
     "founder": { "@type": "Person", "name": "Marc Schlichting" },
     "areaServed": { "@type": "Country", "name": "Danmark" }
   }
@@ -54,9 +54,9 @@
     <div class="shell">
       <header class="hero">
         <div class="hero-copy">
-          <p class="eyebrow">Hjemmesider til små virksomheder</p>
+          <p class="eyebrow">Hjemmesider og n8n-automatisering</p>
           <h1>Det praktiske<br><span class="magic">kan føles magisk.</span></h1>
-          <p class="hero-lede">Entropi Digital bygger klare hjemmesider, bedre veje til henvendelse og enkle automatiseringer. Du får en løsning, der passer til forretningen og er til at forstå, når den er afleveret.</p>
+          <p class="hero-lede">Entropi Digital bygger klare hjemmesider og automatiseringsflows i n8n, der forbinder dine systemer og fjerner gentagne manuelle opgaver. Du får en løsning, der passer til forretningen og er til at forstå, når den er afleveret.</p>
           <div class="hero-actions">
             <a class="button" href="#loesninger">Find dit sted at begynde <span aria-hidden="true">↓</span></a>
             <a class="button secondary" href="priser.html">Se priser</a>
@@ -68,23 +68,44 @@
           </ul>
         </div>
 
-        <div class="hero-visual" aria-label="Interaktiv visning af et praktisk kundeflow">
+        <div class="hero-visual" aria-label="Visualisering af et n8n-automatiseringsflow">
           <div class="orbit" aria-hidden="true"></div>
-          <span class="orbit-node orbit-node-one" aria-hidden="true">besøg</span>
-          <span class="orbit-node orbit-node-two" aria-hidden="true">valg</span>
-          <span class="orbit-node orbit-node-three" aria-hidden="true">svar</span>
+          <span class="orbit-node orbit-node-one" aria-hidden="true">trigger</span>
+          <span class="orbit-node orbit-node-two" aria-hidden="true">kontrol</span>
+          <span class="orbit-node orbit-node-three" aria-hidden="true">handling</span>
           <div class="signal-card">
             <div class="signal-top">
-              <span>entropi / praktisk flow</span>
-              <span class="signal-status" id="signal-status">klar retning</span>
+              <span>entropi / n8n flow</span>
+              <span class="signal-status">driftsklart</span>
             </div>
-            <div class="signal-flow" role="group" aria-label="Vælg et trin i flowet">
-              <button class="signal-step" type="button" aria-pressed="true" data-signal="offer"><span class="signal-num">01</span><strong>Forklar tilbuddet</strong><span class="signal-ok">klart</span></button>
-              <button class="signal-step" type="button" aria-pressed="false" data-signal="action"><span class="signal-num">02</span><strong>Vis næste skridt</strong><span class="signal-ok">enkelt</span></button>
-              <button class="signal-step" type="button" aria-pressed="false" data-signal="inquiry"><span class="signal-num">03</span><strong>Saml henvendelsen</strong><span class="signal-ok">roligt</span></button>
-              <button class="signal-step" type="button" aria-pressed="false" data-signal="followup"><span class="signal-num">04</span><strong>Følg op</strong><span class="signal-ok">automatisk</span></button>
+            <div class="signal-canvas">
+              <svg class="signal-paths" viewBox="0 0 360 230" preserveAspectRatio="none" aria-hidden="true">
+                <path class="signal-path signal-path-one" d="M105 72 C120 72 125 72 140 72"></path>
+                <path class="signal-path signal-path-two" d="M220 72 C235 72 240 72 255 72"></path>
+                <path class="signal-path signal-path-branch" d="M180 108 C180 125 180 135 180 150"></path>
+              </svg>
+              <div class="signal-node signal-node-trigger">
+                <span>TRIGGER</span>
+                <strong>Formular</strong>
+                <small>Webhook</small>
+              </div>
+              <div class="signal-node signal-node-check">
+                <span>KONTROL</span>
+                <strong>Datatjek</strong>
+                <small>IF-node</small>
+              </div>
+              <div class="signal-node signal-node-action">
+                <span>HANDLING</span>
+                <strong>Opret sag</strong>
+                <small>CRM</small>
+              </div>
+              <div class="signal-node signal-node-manual">
+                <span>UNDTAGELSE</span>
+                <strong>Manuel kontrol</strong>
+                <small>Intet går tabt</small>
+              </div>
             </div>
-            <p class="signal-detail" id="signal-detail" aria-live="polite">Kunden forstår hurtigt, hvad virksomheden tilbyder, og hvem løsningen er til.</p>
+            <p class="signal-detail"><span>FLOW KØRER</span> Rutinen håndteres automatisk. Undtagelser bliver sendt til et menneske.</p>
           </div>
         </div>
       </header>
@@ -127,7 +148,7 @@
             <span class="card-num">03 / MINDRE MANUELT</span>
             <h3>Lad én gentagelse passe sig selv</h3>
             <p>Til dig, der gentager den samme administration omkring henvendelser, onboarding eller opfølgning.</p>
-            <span class="card-result">Resultat: Én afgrænset arbejdsgang bliver forenklet, automatiseret og dokumenteret.</span>
+            <span class="card-result">Resultat: Et afgrænset n8n-flow overtager rutinen, håndterer fejl og bliver dokumenteret.</span>
           </article>
         </div>
       </div>
@@ -137,70 +158,131 @@
       <div class="shell">
         <div class="section-heading reveal">
           <div>
-            <p class="eyebrow">Fra friktion til flow</p>
-            <h2>Se hvordan et lille flow løser en rigtig opgave.</h2>
+            <p class="eyebrow">Automatisering i praksis</p>
+            <h2>Se hvad et n8n-flow faktisk gør.</h2>
           </div>
-          <p>Vælg et eksempel. Grafen viser, hvilke oplysninger der kommer ind, hvad der samler dem, og hvilket konkret resultat virksomheden får.</p>
+          <p>Vælg en opgave. Visualiseringen viser triggeren, behandlingen, kontrollen og hvad der sker, når noget kræver et menneske.</p>
         </div>
 
         <div class="flow-explorer reveal">
           <div class="flow-scenarios" role="group" aria-label="Vælg en situation">
             <button class="flow-scenario" type="button" aria-pressed="true" data-flow="inquiries">
-              <span>01 / NY HENVENDELSE</span>
-              <strong>En besøgende vil gerne have hjælp</strong>
-              <small>Opgavetype · virksomhed · mål</small>
+              <span>01 / HENVENDELSER</span>
+              <strong>Fra formular til oprettet kundeemne</strong>
+              <small>Webhook · datatjek · CRM · svar</small>
             </button>
-            <button class="flow-scenario" type="button" aria-pressed="false" data-flow="booking">
-              <span>02 / FØR ET MØDE</span>
-              <strong>Et møde skal være bedre forberedt</strong>
-              <small>Kort brief · spørgsmål · tidspunkt</small>
+            <button class="flow-scenario" type="button" aria-pressed="false" data-flow="documents">
+              <span>02 / BILAG</span>
+              <strong>Fra indbakke til kontrolleret kladde</strong>
+              <small>Mail · udtræk · kontrol · kladde</small>
             </button>
             <button class="flow-scenario" type="button" aria-pressed="false" data-flow="followup">
               <span>03 / OPFØLGNING</span>
-              <strong>En kunde skal følges ordentligt op</strong>
-              <small>Leverance · aftale · dato</small>
+              <strong>Fra statusændring til næste handling</strong>
+              <small>Status · betingelse · opgave · log</small>
             </button>
           </div>
 
-          <div class="flow-board" aria-live="polite">
+          <div class="flow-board">
             <div class="flow-board-top">
-              <span id="flow-board-id">EKSEMPEL 01 / NY HENVENDELSE</span>
-              <span class="flow-demo-status">Interaktivt eksempel · sender ingen data</span>
+              <span id="flow-board-id">N8N FLOW 01 / HENVENDELSER</span>
+              <div class="flow-board-actions">
+                <span class="flow-demo-status">Visualisering · ingen data sendes</span>
+                <button class="flow-play" id="flow-play" type="button"><span aria-hidden="true">▶</span> <span id="flow-play-label">Afspil flowet</span></button>
+              </div>
             </div>
             <div class="flow-board-copy">
-              <h3 id="flow-title">Fra løs idé til en brugbar henvendelse</h3>
-              <p id="flow-summary">Den besøgende vælger opgavetype, fortæller hvem virksomheden er og beskriver det vigtigste mål. Svarene lander samlet hos Marc.</p>
+              <h3 id="flow-title">En ny henvendelse lander det rigtige sted</h3>
+              <p id="flow-summary">Når formularen sendes, kontrollerer flowet oplysningerne, opretter kundeemnet og giver både virksomheden og kunden besked.</p>
             </div>
             <div class="flow-graph" id="flow-graph" data-flow="inquiries">
-              <svg class="flow-graph-lines" viewBox="0 0 900 360" preserveAspectRatio="none" aria-hidden="true">
-                <path class="graph-path graph-path-one" d="M150 62 C280 62 300 180 445 180"></path>
-                <path class="graph-path graph-path-two" d="M150 180 C280 180 310 180 445 180"></path>
-                <path class="graph-path graph-path-three" d="M150 298 C280 298 300 180 445 180"></path>
-                <path class="graph-path graph-path-result" d="M525 180 C650 180 680 180 790 180"></path>
+              <svg class="flow-graph-lines" viewBox="0 0 1000 420" preserveAspectRatio="none" aria-hidden="true">
+                <defs>
+                  <filter id="flow-glow" x="-100%" y="-100%" width="300%" height="300%">
+                    <feGaussianBlur stdDeviation="4" result="blur"></feGaussianBlur>
+                    <feMerge><feMergeNode in="blur"></feMergeNode><feMergeNode in="SourceGraphic"></feMergeNode></feMerge>
+                  </filter>
+                </defs>
+                <path class="graph-path graph-path-one" data-path-step="1" d="M175 210 C200 210 225 210 250 210"></path>
+                <path class="graph-path graph-path-two" data-path-step="2" d="M350 210 C375 210 400 210 425 210"></path>
+                <path class="graph-path graph-path-success" data-path-step="3" d="M575 190 C620 190 620 115 650 115"></path>
+                <path class="graph-path graph-path-result" data-path-step="4" d="M750 115 C785 115 815 115 850 115"></path>
+                <path class="graph-path graph-path-fallback" data-path-step="5" d="M575 230 C620 230 620 315 650 315"></path>
+                <path class="flow-route" id="flow-route-success" d="M90 210 C180 210 210 210 300 210 C390 210 420 210 500 210 C590 210 620 115 700 115 C780 115 820 115 900 115"></path>
+                <path class="flow-route" id="flow-route-fallback" d="M90 210 C180 210 210 210 300 210 C390 210 420 210 500 210 C590 210 620 315 700 315"></path>
+                <circle class="flow-traveler flow-traveler-success" r="6" filter="url(#flow-glow)">
+                  <animateMotion dur="8.4s" repeatCount="indefinite"><mpath href="#flow-route-success"></mpath></animateMotion>
+                </circle>
+                <circle class="flow-traveler flow-traveler-success flow-traveler-soft" r="4.5" filter="url(#flow-glow)">
+                  <animateMotion dur="8.4s" begin="-2.8s" repeatCount="indefinite"><mpath href="#flow-route-success"></mpath></animateMotion>
+                </circle>
+                <circle class="flow-traveler flow-traveler-success flow-traveler-faint" r="3.5" filter="url(#flow-glow)">
+                  <animateMotion dur="8.4s" begin="-5.6s" repeatCount="indefinite"><mpath href="#flow-route-success"></mpath></animateMotion>
+                </circle>
+                <circle class="flow-traveler flow-traveler-fallback" r="5" filter="url(#flow-glow)">
+                  <animateMotion dur="9.2s" begin="4.2s" repeatCount="indefinite"><mpath href="#flow-route-fallback"></mpath></animateMotion>
+                </circle>
               </svg>
+              <span class="flow-packet" aria-hidden="true"></span>
 
-              <div class="flow-inputs" aria-label="Input til flowet">
-                <div class="flow-chip"><span>INPUT 01</span><strong id="flow-input-1">Opgavetype</strong></div>
-                <div class="flow-chip"><span>INPUT 02</span><strong id="flow-input-2">Virksomhed</strong></div>
-                <div class="flow-chip"><span>INPUT 03</span><strong id="flow-input-3">Vigtigste mål</strong></div>
+              <div class="automation-node node-trigger" data-story-node="trigger">
+                <span class="node-port node-port-out" aria-hidden="true"></span>
+                <span class="node-type">TRIGGER</span>
+                <strong id="flow-trigger-title">Formular modtaget</strong>
+                <small id="flow-trigger-detail">Webhook starter flowet</small>
               </div>
 
-              <div class="flow-core">
-                <span class="flow-core-ring" aria-hidden="true"></span>
-                <span class="flow-core-label">SAMLER</span>
-                <strong id="flow-core-title">Kort projektbrief</strong>
-                <small id="flow-core-detail">Tre svar samlet ét sted</small>
+              <div class="automation-node node-process" data-story-node="process">
+                <span class="node-port node-port-in" aria-hidden="true"></span>
+                <span class="node-port node-port-out" aria-hidden="true"></span>
+                <span class="node-type">BEHANDLER</span>
+                <strong id="flow-process-title">Klargør data</strong>
+                <small id="flow-process-detail">Navn, mail og behov</small>
               </div>
 
-              <div class="flow-result-node">
-                <span>RESULTAT</span>
-                <strong id="flow-result-title">Første vurdering</strong>
-                <small id="flow-result-detail">Marc kan svare konkret</small>
+              <div class="automation-node node-check" data-story-node="check">
+                <span class="node-port node-port-in" aria-hidden="true"></span>
+                <span class="node-port node-port-out" aria-hidden="true"></span>
+                <span class="node-type">KONTROL</span>
+                <strong id="flow-check-title">Data komplette?</strong>
+                <small id="flow-check-detail">IF-node vælger vej</small>
+              </div>
+
+              <div class="automation-node node-primary" data-story-node="primary">
+                <span class="node-port node-port-in" aria-hidden="true"></span>
+                <span class="node-port node-port-out" aria-hidden="true"></span>
+                <span class="node-branch-label">JA</span>
+                <span class="node-type">HANDLING</span>
+                <strong id="flow-primary-title">Opret kundeemne</strong>
+                <small id="flow-primary-detail">CRM eller kundeliste</small>
+              </div>
+
+              <div class="automation-node node-result" data-story-node="result">
+                <span class="node-port node-port-in" aria-hidden="true"></span>
+                <span class="node-type">RESULTAT</span>
+                <strong id="flow-result-title">Bekræft og giv besked</strong>
+                <small id="flow-result-detail">Kunde og ejer informeres</small>
+              </div>
+
+              <div class="automation-node node-fallback" data-story-node="fallback">
+                <span class="node-port node-port-in" aria-hidden="true"></span>
+                <span class="node-branch-label">NEJ</span>
+                <span class="node-type">MANUEL KONTROL</span>
+                <strong id="flow-fallback-title">Læg i kontrolkø</strong>
+                <small id="flow-fallback-detail">Intet forsvinder stille</small>
               </div>
             </div>
+            <div class="flow-narrator" aria-live="polite">
+              <div class="flow-narrator-meta">
+                <span id="flow-story-step">TRIN 1 AF 6</span>
+                <span class="flow-story-progress" aria-hidden="true"><i id="flow-story-progress"></i></span>
+              </div>
+              <strong id="flow-story-title">Kunden sender formularen</strong>
+              <p id="flow-story-detail">Webstedet afleverer oplysningerne til n8n gennem en webhook. Det er signalet, der starter flowet.</p>
+            </div>
             <div class="flow-outcome">
-              <span>Resultat</span>
-              <strong id="flow-outcome">Kunden får et relevant svar uden først at skrive en lang brief.</strong>
+              <span>Tidsbesparelse</span>
+              <strong id="flow-outcome">Henvendelsen bliver behandlet med det samme, mens undtagelser stadig lander hos et menneske.</strong>
             </div>
           </div>
         </div>
