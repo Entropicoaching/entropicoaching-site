@@ -268,13 +268,23 @@ if (flowGraph) {
 const choiceButtons = document.querySelectorAll(".choice");
 const packageField = document.querySelector("#package");
 
+function selectChoice(selectedButton) {
+  if (!selectedButton) return;
+  choiceButtons.forEach((item) => item.setAttribute("aria-pressed", String(item === selectedButton)));
+  if (packageField) packageField.value = selectedButton.dataset.value || selectedButton.textContent.trim();
+}
+
 choiceButtons.forEach((button) => {
   button.addEventListener("click", () => {
-    choiceButtons.forEach((item) => item.setAttribute("aria-pressed", "false"));
-    button.setAttribute("aria-pressed", "true");
-    if (packageField) packageField.value = button.dataset.value || button.textContent.trim();
+    selectChoice(button);
   });
 });
+
+if (choiceButtons.length) {
+  const requestedTrack = new URLSearchParams(window.location.search).get("spor");
+  const requestedButton = Array.from(choiceButtons).find((button) => button.dataset.spor === requestedTrack);
+  if (requestedButton) selectChoice(requestedButton);
+}
 
 const contactForm = document.querySelector("#contact-form");
 const responseBox = document.querySelector("#response");
@@ -298,8 +308,7 @@ if (contactForm && responseBox && submitButton) {
 
       const name = document.querySelector("#name")?.value.trim();
       contactForm.reset();
-      choiceButtons.forEach((item, index) => item.setAttribute("aria-pressed", index === 0 ? "true" : "false"));
-      if (packageField) packageField.value = choiceButtons[0]?.dataset.value || "Landingsside";
+      selectChoice(choiceButtons[0]);
       responseBox.textContent = `Tak${name ? `, ${name}` : ""}. Din besked er sendt. Jeg svarer normalt inden for 1 til 2 hverdage.`;
     } catch (error) {
       responseBox.textContent = "Noget gik galt med afsendelsen. Skriv i stedet til kontakt@entropidigital.dk.";
