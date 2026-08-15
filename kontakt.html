@@ -3,15 +3,15 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Kontakt · Fortæl om din hjemmeside | Entropi Digital</title>
-  <meta name="description" content="Fortæl kort om din hjemmeside eller digitale arbejdsgang. Marc svarer normalt inden for 1 til 2 hverdage.">
+  <title>Kontakt om hjemmeside eller n8n | Entropi Digital</title>
+  <meta name="description" content="Fortæl kort om din hjemmeside eller den arbejdsgang, du vil automatisere i n8n. Marc svarer normalt inden for 1 til 2 hverdage.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://entropidigital.dk/kontakt.html">
   <meta property="og:locale" content="da_DK">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Entropi Digital">
   <meta property="og:title" content="Kontakt · Entropi Digital">
-  <meta property="og:description" content="Start med det, der skal blive lettere.">
+  <meta property="og:description" content="Start en konkret afklaring om hjemmeside eller n8n-automatisering.">
   <meta property="og:url" content="https://entropidigital.dk/kontakt.html">
   <meta name="theme-color" content="#070912">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
@@ -44,7 +44,7 @@
           <p class="eyebrow">Første afklaring</p>
           <h1>Start med det,<br>der skal blive lettere.</h1>
         </div>
-        <p class="page-intro">Fortæl kort om virksomheden, den nuværende hjemmeside og det vigtigste, du vil forbedre. Marc tager derefter stilling til, om opgaven passer til Entropi Digital.</p>
+        <p class="page-intro">Fortæl kort om virksomheden og det, der skal fungere bedre. Det kan være en hjemmeside, en gentagen arbejdsgang eller en kombination. Marc vurderer derefter, om opgaven passer til Entropi Digital.</p>
       </header>
 
       <div class="contact-layout">
@@ -81,16 +81,17 @@
 
           <span class="field-label">Hvad handler opgaven mest om?</span>
           <div class="choices" role="group" aria-label="Interesse">
-            <button class="choice" type="button" aria-pressed="true" data-value="Landingsside">Landingsside</button>
-            <button class="choice" type="button" aria-pressed="false" data-value="Hjemmeside">Hjemmeside</button>
-            <button class="choice" type="button" aria-pressed="false" data-value="Hjemmeside med flow">Hjemmeside med flow</button>
-            <button class="choice" type="button" aria-pressed="false" data-value="Automation">Automation</button>
+            <button class="choice" type="button" aria-pressed="true" data-value="Hjemmeside" data-spor="hjemmeside">Hjemmeside</button>
+            <button class="choice" type="button" aria-pressed="false" data-value="n8n-automatisering" data-spor="automation">n8n-automatisering</button>
+            <button class="choice" type="button" aria-pressed="false" data-value="Hjemmeside med n8n" data-spor="kombineret">Hjemmeside med n8n</button>
           </div>
-          <input type="hidden" name="pakke" id="package" value="Landingsside">
+          <input type="hidden" name="pakke" id="package" value="Hjemmeside">
           <input type="hidden" name="_subject" value="Ny henvendelse fra entropidigital.dk">
 
           <label for="message">Hvad skal blive lettere?</label>
-          <textarea id="message" name="message" placeholder="Fx: Vores hjemmeside forklarer ikke tydeligt, hvad vi tilbyder, og kunderne ved ikke, hvad de skal gøre bagefter." required></textarea>
+          <textarea id="message" name="message" placeholder="Fx: Vi kopierer de samme oplysninger fra formularen til kundelisten og sender derefter to faste mails manuelt." required></textarea>
+
+          <p class="privacy-note">Når du sender formularen, bruger Entropi Digital oplysningerne til at vurdere og besvare din henvendelse. Formularen behandles via Formspree. <a href="privatliv.html">Læs om behandling af personoplysninger</a>.</p>
 
           <div class="submit-row">
             <button class="button" id="submit-button" type="submit">Send besked →</button>
@@ -105,7 +106,7 @@
   <div class="shell">
     <footer class="site-footer">
       <span>Entropi Digital · CVR 46684443</span>
-      <span>kontakt@entropidigital.dk</span>
+      <span><a href="mailto:kontakt@entropidigital.dk">kontakt@entropidigital.dk</a> · <a href="privatliv.html">Privatliv</a></span>
     </footer>
   </div>
   <script src="assets/digital.js" defer></script>
