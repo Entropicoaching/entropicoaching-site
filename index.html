@@ -41,12 +41,12 @@
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-menu">Menu</button>
       <ul class="nav-links" id="primary-menu">
         <li><a href="#loesninger">Løsninger</a></li>
-        <li><a href="#forloeb">Sådan foregår det</a></li>
+        <li><a href="#flow">Se et flow</a></li>
         <li><a href="#om">Om Marc</a></li>
         <li><a href="priser.html">Priser</a></li>
         <li><a href="kontakt.html">Kontakt</a></li>
       </ul>
-      <a class="nav-cta" href="kontakt.html">Fortæl om din hjemmeside <span aria-hidden="true">→</span></a>
+      <a class="nav-cta" href="kontakt.html">Start en afklaring <span aria-hidden="true">→</span></a>
     </nav>
   </div>
 
@@ -56,10 +56,10 @@
         <div class="hero-copy">
           <p class="eyebrow">Hjemmesider til små virksomheder</p>
           <h1>Det praktiske<br><span class="magic">kan føles magisk.</span></h1>
-          <p class="hero-lede">Entropi Digital bygger klare hjemmesider, bedre veje til henvendelse og enkle automatiseringer. Du får en løsning, der passer til forretningen — og som er til at forstå, når den er afleveret.</p>
+          <p class="hero-lede">Entropi Digital bygger klare hjemmesider, bedre veje til henvendelse og enkle automatiseringer. Du får en løsning, der passer til forretningen og er til at forstå, når den er afleveret.</p>
           <div class="hero-actions">
-            <a class="button" href="kontakt.html">Fortæl om din hjemmeside <span aria-hidden="true">→</span></a>
-            <a class="button secondary" href="priser.html">Se løsninger og priser</a>
+            <a class="button" href="#loesninger">Find dit sted at begynde <span aria-hidden="true">↓</span></a>
+            <a class="button secondary" href="priser.html">Se priser</a>
           </div>
           <ul class="micro-proof" aria-label="Fordele">
             <li>Direkte samarbejde med Marc</li>
@@ -68,19 +68,23 @@
           </ul>
         </div>
 
-        <div class="hero-visual" aria-hidden="true">
-          <div class="orbit"></div>
+        <div class="hero-visual" aria-label="Interaktiv visning af et praktisk kundeflow">
+          <div class="orbit" aria-hidden="true"></div>
+          <span class="orbit-node orbit-node-one" aria-hidden="true">besøg</span>
+          <span class="orbit-node orbit-node-two" aria-hidden="true">valg</span>
+          <span class="orbit-node orbit-node-three" aria-hidden="true">svar</span>
           <div class="signal-card">
             <div class="signal-top">
               <span>entropi / praktisk flow</span>
-              <span class="signal-status">klar retning</span>
+              <span class="signal-status" id="signal-status">klar retning</span>
             </div>
-            <div class="signal-flow">
-              <div class="signal-step"><span class="signal-num">01</span><strong>Forklar tilbuddet</strong><span class="signal-ok">klart</span></div>
-              <div class="signal-step"><span class="signal-num">02</span><strong>Vis næste skridt</strong><span class="signal-ok">enkelt</span></div>
-              <div class="signal-step"><span class="signal-num">03</span><strong>Saml henvendelsen</strong><span class="signal-ok">roligt</span></div>
-              <div class="signal-step"><span class="signal-num">04</span><strong>Følg op</strong><span class="signal-ok">automatisk</span></div>
+            <div class="signal-flow" role="group" aria-label="Vælg et trin i flowet">
+              <button class="signal-step" type="button" aria-pressed="true" data-signal="offer"><span class="signal-num">01</span><strong>Forklar tilbuddet</strong><span class="signal-ok">klart</span></button>
+              <button class="signal-step" type="button" aria-pressed="false" data-signal="action"><span class="signal-num">02</span><strong>Vis næste skridt</strong><span class="signal-ok">enkelt</span></button>
+              <button class="signal-step" type="button" aria-pressed="false" data-signal="inquiry"><span class="signal-num">03</span><strong>Saml henvendelsen</strong><span class="signal-ok">roligt</span></button>
+              <button class="signal-step" type="button" aria-pressed="false" data-signal="followup"><span class="signal-num">04</span><strong>Følg op</strong><span class="signal-ok">automatisk</span></button>
             </div>
+            <p class="signal-detail" id="signal-detail" aria-live="polite">Kunden forstår hurtigt, hvad virksomheden tilbyder, og hvem løsningen er til.</p>
           </div>
         </div>
       </header>
@@ -129,6 +133,80 @@
       </div>
     </section>
 
+    <section class="section flow-section" id="flow">
+      <div class="shell">
+        <div class="section-heading reveal">
+          <div>
+            <p class="eyebrow">Fra friktion til flow</p>
+            <h2>Se hvordan et lille flow løser en rigtig opgave.</h2>
+          </div>
+          <p>Vælg et eksempel. Grafen viser, hvilke oplysninger der kommer ind, hvad der samler dem, og hvilket konkret resultat virksomheden får.</p>
+        </div>
+
+        <div class="flow-explorer reveal">
+          <div class="flow-scenarios" role="group" aria-label="Vælg en situation">
+            <button class="flow-scenario" type="button" aria-pressed="true" data-flow="inquiries">
+              <span>01 / NY HENVENDELSE</span>
+              <strong>En besøgende vil gerne have hjælp</strong>
+              <small>Opgavetype · virksomhed · mål</small>
+            </button>
+            <button class="flow-scenario" type="button" aria-pressed="false" data-flow="booking">
+              <span>02 / FØR ET MØDE</span>
+              <strong>Et møde skal være bedre forberedt</strong>
+              <small>Kort brief · spørgsmål · tidspunkt</small>
+            </button>
+            <button class="flow-scenario" type="button" aria-pressed="false" data-flow="followup">
+              <span>03 / OPFØLGNING</span>
+              <strong>En kunde skal følges ordentligt op</strong>
+              <small>Leverance · aftale · dato</small>
+            </button>
+          </div>
+
+          <div class="flow-board" aria-live="polite">
+            <div class="flow-board-top">
+              <span id="flow-board-id">EKSEMPEL 01 / NY HENVENDELSE</span>
+              <span class="flow-demo-status">Interaktivt eksempel · sender ingen data</span>
+            </div>
+            <div class="flow-board-copy">
+              <h3 id="flow-title">Fra løs idé til en brugbar henvendelse</h3>
+              <p id="flow-summary">Den besøgende vælger opgavetype, fortæller hvem virksomheden er og beskriver det vigtigste mål. Svarene lander samlet hos Marc.</p>
+            </div>
+            <div class="flow-graph" id="flow-graph" data-flow="inquiries">
+              <svg class="flow-graph-lines" viewBox="0 0 900 360" preserveAspectRatio="none" aria-hidden="true">
+                <path class="graph-path graph-path-one" d="M150 62 C280 62 300 180 445 180"></path>
+                <path class="graph-path graph-path-two" d="M150 180 C280 180 310 180 445 180"></path>
+                <path class="graph-path graph-path-three" d="M150 298 C280 298 300 180 445 180"></path>
+                <path class="graph-path graph-path-result" d="M525 180 C650 180 680 180 790 180"></path>
+              </svg>
+
+              <div class="flow-inputs" aria-label="Input til flowet">
+                <div class="flow-chip"><span>INPUT 01</span><strong id="flow-input-1">Opgavetype</strong></div>
+                <div class="flow-chip"><span>INPUT 02</span><strong id="flow-input-2">Virksomhed</strong></div>
+                <div class="flow-chip"><span>INPUT 03</span><strong id="flow-input-3">Vigtigste mål</strong></div>
+              </div>
+
+              <div class="flow-core">
+                <span class="flow-core-ring" aria-hidden="true"></span>
+                <span class="flow-core-label">SAMLER</span>
+                <strong id="flow-core-title">Kort projektbrief</strong>
+                <small id="flow-core-detail">Tre svar samlet ét sted</small>
+              </div>
+
+              <div class="flow-result-node">
+                <span>RESULTAT</span>
+                <strong id="flow-result-title">Første vurdering</strong>
+                <small id="flow-result-detail">Marc kan svare konkret</small>
+              </div>
+            </div>
+            <div class="flow-outcome">
+              <span>Resultat</span>
+              <strong id="flow-outcome">Kunden får et relevant svar uden først at skrive en lang brief.</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="section" id="forloeb">
       <div class="shell">
         <div class="section-heading reveal">
@@ -173,18 +251,41 @@
 
     <section class="section" id="om">
       <div class="shell founder">
-        <div class="reveal">
-          <p class="eyebrow">Mennesket bag Entropi</p>
-          <h2>Ikke et bureau.<br>Du arbejder med Marc.</h2>
-        </div>
-        <div class="founder-copy reveal">
-          <p>Jeg bygger hjemmesider og enkle digitale arbejdsgange for små virksomheder. Målet er ikke at gøre projektet større, men at finde den mindste løsning, der faktisk gør hverdagen lettere.</p>
-          <p>Du har én kontakt fra første afklaring til test og aflevering. Det gør beslutninger hurtigere og ansvaret tydeligt.</p>
-          <div class="founder-principles">
-            <span>01 / Praktisk før imponerende</span>
-            <span>02 / Afgrænsning før produktion</span>
-            <span>03 / Ejerskab efter aflevering</span>
+        <div class="founder-intro reveal">
+          <p class="eyebrow">Mennesket bag Entropi Digital</p>
+          <h2>Jeg hedder Marc.<br>Jeg bygger det, der skal fungere i hverdagen.</h2>
+          <div class="founder-story">
+            <p>Entropi Digital er mit arbejde med hjemmesider, digitale løsninger og automatiseringer for små virksomheder. Du taler med mig fra den første afklaring til den færdige aflevering.</p>
+            <p>Min vej ind i det digitale arbejde er ikke klassisk. Jeg er gymnasialt uddannet og har erfaring fra Den Kongelige Livgarde, arbejdet som folkeskolelærer og rollen som styrkeløfttræner.</p>
+            <p>Det har lært mig at tage ansvar, møde mennesker i øjenhøjde og skabe fremdrift i tydelige trin. Den tilgang tager jeg med ind i hvert digitalt projekt.</p>
           </div>
+        </div>
+        <div class="founder-card reveal">
+          <div class="founder-card-top">
+            <div class="founder-monogram" aria-hidden="true">MS</div>
+            <div>
+              <span>Marc Schlichting</span>
+              <small>Grundlægger og din faste kontakt</small>
+            </div>
+          </div>
+          <div class="founder-working-style">
+            <div>
+              <span>01 / DEN KONGELIGE LIVGARDE</span>
+              <strong>Ansvar skal være tydeligt.</strong>
+              <p>Jeg følger opgaven til dørs og siger klart, hvad jeg gør, og hvad jeg skal bruge fra dig.</p>
+            </div>
+            <div>
+              <span>02 / FOLKESKOLELÆRER</span>
+              <strong>Det svære skal kunne forklares enkelt.</strong>
+              <p>Du behøver ikke forstå teknikken for at kunne forstå valgene og tage stilling.</p>
+            </div>
+            <div>
+              <span>03 / STYRKELØFTTRÆNER</span>
+              <strong>Fremskridt bygges i konkrete trin.</strong>
+              <p>Vi starter med den vigtigste ændring, ser hvad den gør og bygger videre derfra.</p>
+            </div>
+          </div>
+          <p class="founder-bottom-line">Praktisk sans · klar kommunikation · ansvar hele vejen</p>
         </div>
       </div>
     </section>
@@ -193,10 +294,11 @@
       <div class="shell">
         <div class="cta-panel reveal">
           <div>
-            <p class="eyebrow">Næste skridt</p>
-            <h2>Hvad skal din hjemmeside gøre lettere?</h2>
+            <p class="eyebrow">Kort første afklaring</p>
+            <h2>Send problemet.<br>Få et konkret næste skridt.</h2>
+            <p class="cta-note">Fem korte felter er nok. Marc vurderer opgaven og svarer normalt inden for 1 til 2 hverdage.</p>
           </div>
-          <a class="button" href="kontakt.html">Fortæl kort om opgaven <span aria-hidden="true">→</span></a>
+          <a class="button" href="kontakt.html">Start afklaringen <span aria-hidden="true">→</span></a>
         </div>
       </div>
     </section>
